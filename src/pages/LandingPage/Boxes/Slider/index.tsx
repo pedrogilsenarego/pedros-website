@@ -46,7 +46,7 @@ const Slider = ({ x }: Props) => {
         height: "100vh",
         width: "100%",
         display: "flex",
-
+        overflow: "hidden",
         position: "relative",
       }}
     >

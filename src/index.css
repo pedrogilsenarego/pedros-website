@@ -12,6 +12,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -ms-overflow-style: none !important;  /* IE and Edge */
   scrollbar-width: none !important;  /* Firefox */
+  overflow-x: hidden !important;
 }
 
 body::-webkit-scrollbar{

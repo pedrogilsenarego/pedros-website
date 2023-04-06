@@ -19,13 +19,14 @@ const Boxes = () => {
           flexDirection: "column",
           height: "100vh",
           position: "absolute",
-          width: "100vh",
+          width: "100vw",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           opacity: boxesOpacity ? 1 : 0,
           transition: "opacity 2s ease-in-out",
-          marginTop: "-5%"
+          marginTop: "-5%",
+          overflow: "hidden !important",
         }}
       >
         {/* <CentralButtons {...configCentralButtons} /> */}
