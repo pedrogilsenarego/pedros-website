@@ -3,13 +3,15 @@ import Boxes from "../Boxes";
 import Boxes2 from "../Boxes2";
 import Boxes3 from "../Boxes3";
 import Message from "./Message";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 interface Props {
   x: number;
 }
 
 const Slider = ({ x }: Props) => {
-
+  const Theme = useTheme();
+  const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const configBox = {
     x,
   };
@@ -55,7 +57,7 @@ const Slider = ({ x }: Props) => {
           display: "flex",
           justifyContent: "center",
           position: "absolute",
-          bottom: "32%",
+          bottom: mobile ? "35%" : "33%",
           left: 0,
           right: 0,
 

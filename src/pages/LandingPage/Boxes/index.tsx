@@ -25,7 +25,7 @@ const Boxes = () => {
           alignItems: "center",
           opacity: boxesOpacity ? 1 : 0,
           transition: "opacity 2s ease-in-out",
-          marginTop: "-5%",
+
           overflow: "hidden !important",
         }}
       >
