@@ -13,22 +13,30 @@ const Message = () => {
   return (
     <>
       {boxesOpacity && (
-        <TypeWriterEffect
-          textStyle={{
-            color: Colors.BLACKISH,
-            fontWeight: 500,
-            fontFamily: "Termina",
-            fontSize: mobile ? "1rem" : "1.5rem",
+        <div
+          style={{
+            backgroundColor: Colors.BLACKISH,
+            borderRadius: mobile ? "4px" : "8px",
+            padding: mobile ? "0px 8px 0px 8px" : "0px 16px 0px 16px",
           }}
-          startDelay={2000}
-          cursorColor={Colors.BLACKISH}
-          multiText={[
-            i18n.t("initial.firstSentence"),
-            i18n.t("initial.secondSentence"),
-          ]}
-          multiTextDelay={1000}
-          typeSpeed={50}
-        />
+        >
+          <TypeWriterEffect
+            textStyle={{
+              color: Colors.WHITE_SMUDGE,
+              fontWeight: 500,
+              fontFamily: "Termina",
+              fontSize: mobile ? "1rem" : "1.5rem",
+            }}
+            startDelay={2000}
+            cursorColor={Colors.WHITE_SMUDGE}
+            multiText={[
+              i18n.t("initial.firstSentence"),
+              i18n.t("initial.secondSentence"),
+            ]}
+            multiTextDelay={1000}
+            typeSpeed={50}
+          />
+        </div>
       )}
     </>
   );

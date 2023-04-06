@@ -18,6 +18,7 @@ const HackerLettering = ({ message, color, borderColor }: Props) => {
   const [showName, setShowName] = useState<boolean>(false);
   const [goHome, setGoHome] = useState<boolean>(false);
   const [mobileFirstTouch, setMobileFirstTouch] = useState<boolean>(false)
+  const [hide, setHide] = useState<boolean>(false)
   const { setBoxesOpacity } = useContext(LandingPageContext);
 
   useEffect(() => {
@@ -54,6 +55,7 @@ const HackerLettering = ({ message, color, borderColor }: Props) => {
       setGoHome(true);
       setTimeout(() => {
         setBoxesOpacity(true)
+        setHide(true)
       }, 1700);
     })
   };
@@ -65,76 +67,79 @@ const HackerLettering = ({ message, color, borderColor }: Props) => {
       setGoHome(true);
       setTimeout(() => {
         setBoxesOpacity(true)
+        setHide(true)
       }, 1700);
     })
   }
 
   return (
-    <div
-      onClick={(e) => mobile ? handleMobile(e) : handleGoBox(e)}
-      style={{
-        zIndex: 1000,
-        rowGap: mobile ? "15px" : "20px",
-        justifyContent: "center",
-        flexDirection: "column",
-        alignItems: "center",
-        display: "flex",
-        opacity: goHome && mobileFirstTouch ? 0 : 1,
-        transition: "opacity 2s ease-in-out",
-      }}
-    >
-      <div
-        style={{ cursor: "pointer", display: "flex", position: "relative" }}
-        onMouseEnter={() => setStopEffect(true)}
-        onMouseLeave={() => setStopEffect(false)}
-      >
-        {message.split("").map((item, pos) => {
-          return (
-            <div
-              key={pos}
-              style={{
-                border: `solid 1px ${borderColor || "#ffffff36"}`,
-
-                width: mobile ? "1.1rem" : "2.3rem",
-                height: mobile ? "1.2rem" : "3rem",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              {item === " " ? (
-                "\u00A0"
-              ) : (
-                <Typography
-                  color={color || "white"}
-                  style={{
-                    opacity: pos <= counter ? 1 : 0.6,
-                    textTransform: "uppercase",
-                    fontSize: mobile ? "0.8rem" : "1.5rem",
-                    fontWeight: 800,
-                  }}
-                >
-                  {pos <= counter ? item : letters[randomNumbers[pos]]}
-                </Typography>
-              )}
-            </div>
-          );
-        })}
-      </div>
-      <Typography
+    <>
+      {!hide && (<div
+        onClick={(e) => mobile ? handleMobile(e) : handleGoBox(e)}
         style={{
-          textTransform: "uppercase",
-          letterSpacing: "6px",
-          fontSize: mobile ? "0.8rem" : "18px",
-          opacity: showName ? 1 : 0,
-          transition: "opacity 3s ease-in-out",
-          color: color,
-          cursor: "pointer",
+          zIndex: 1000,
+          rowGap: mobile ? "15px" : "20px",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
+          display: "flex",
+          opacity: goHome && mobileFirstTouch ? 0 : 1,
+          transition: "opacity 2s ease-in-out",
         }}
       >
-        Pedro Sena Rego
-      </Typography>
-    </div>
+        <div
+          style={{ cursor: "pointer", display: "flex", position: "relative" }}
+          onMouseEnter={() => setStopEffect(true)}
+          onMouseLeave={() => setStopEffect(false)}
+        >
+          {message.split("").map((item, pos) => {
+            return (
+              <div
+                key={pos}
+                style={{
+                  border: `solid 1px ${borderColor || "#ffffff36"}`,
+
+                  width: mobile ? "1.1rem" : "2.3rem",
+                  height: mobile ? "1.2rem" : "3rem",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                {item === " " ? (
+                  "\u00A0"
+                ) : (
+                  <Typography
+                    color={color || "white"}
+                    style={{
+                      opacity: pos <= counter ? 1 : 0.6,
+                      textTransform: "uppercase",
+                      fontSize: mobile ? "0.8rem" : "1.5rem",
+                      fontWeight: 800,
+                    }}
+                  >
+                    {pos <= counter ? item : letters[randomNumbers[pos]]}
+                  </Typography>
+                )}
+              </div>
+            );
+          })}
+        </div>
+        <Typography
+          style={{
+            textTransform: "uppercase",
+            letterSpacing: "6px",
+            fontSize: mobile ? "0.8rem" : "18px",
+            opacity: showName ? 1 : 0,
+            transition: "opacity 3s ease-in-out",
+            color: color,
+            cursor: "pointer",
+          }}
+        >
+          Pedro Sena Rego
+        </Typography>
+      </div>)}
+    </>
   );
 };
 

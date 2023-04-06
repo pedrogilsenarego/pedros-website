@@ -57,14 +57,7 @@ const Boxes = ({ x, color, metalness, roughness, clearcoatRoughness }) => {
   }, [x]);
 
   return (
-    <Canvas
-      shadows
-      dpr={[1, 2]}
-      shadowMap
-      sRGB
-      colorManagement
-      camera={{ position: [30, 70, 400], fov: 1.5 }}
-    >
+    <Canvas shadows dpr={[1, 2]} camera={{ position: [30, 70, 400], fov: 1.5 }}>
       <ambientLight intensity={0.1} />
       <directionalLight
         position={[0, 50, 200]}

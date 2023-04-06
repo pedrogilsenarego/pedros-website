@@ -19,7 +19,7 @@ const Slider = ({ x }: Props) => {
   let sliderArr = [
     <Boxes
       {...configBox}
-      color='#E5E4E166'
+      color='#E5E4E1'
       metalness='0.5'
       roughness='0.1'
       clearcoatRoughness='0.9'

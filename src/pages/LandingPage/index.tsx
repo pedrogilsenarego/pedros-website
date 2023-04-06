@@ -5,6 +5,7 @@ import WatchLab from "./Boxes";
 import { LandingPageContextProvider } from "./LandingPageContext";
 
 
+
 const LandingPage = () => {
 
 
@@ -22,6 +23,7 @@ const LandingPage = () => {
 
         }}
       >
+
         <HackerLettering message="<Web Engineering/>" color={Colors.BLACKISH} borderColor={Colors.BLACKISH_TRANSPARENT} />
         <WatchLab />
       </div>
