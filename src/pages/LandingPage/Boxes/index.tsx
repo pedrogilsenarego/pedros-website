@@ -3,7 +3,7 @@ import CentralButtons from "./CentralButtons";
 import useWatchLab from "./useWatchLab";
 import { useContext } from "react";
 import { LandingPageContext } from "../LandingPageContext";
-import { useMediaQuery, useTheme } from "@mui/material";
+
 
 
 
@@ -11,8 +11,6 @@ import { useMediaQuery, useTheme } from "@mui/material";
 const Boxes = () => {
   const { configCentralButtons, configSlider, } = useWatchLab();
   const { boxesOpacity } = useContext(LandingPageContext);
-  const Theme = useTheme()
-  const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
 
   return (
     <>
@@ -32,7 +30,7 @@ const Boxes = () => {
           overflow: "hidden !important",
         }}
       >
-        {!mobile && (<CentralButtons {...configCentralButtons} />)}
+        <CentralButtons {...configCentralButtons} />
 
 
         <Slider {...configSlider} />

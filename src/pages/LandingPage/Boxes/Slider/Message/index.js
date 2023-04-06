@@ -17,7 +17,7 @@ const Message = () => {
           style={{
             backgroundColor: Colors.BLACKISH,
             borderRadius: mobile ? "4px" : "8px",
-            padding: mobile ? "0px 8px 0px 8px" : "0px 16px 0px 16px",
+            padding: mobile ? "2px 10px 2px 10px" : "0px 16px 0px 16px",
           }}
         >
           <TypeWriterEffect

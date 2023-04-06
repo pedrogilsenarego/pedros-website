@@ -1,13 +1,14 @@
-
-
-import { Colors } from "../../../../constants/pallete";
+import { useState } from "react";
 import Ball from "./Ball";
+import { useMediaQuery, useTheme } from "@mui/material";
 interface Props {
   setX: (x: number) => void;
   x: number
 }
 const CentralButtons = ({ setX, x }: Props) => {
 
+  const Theme = useTheme()
+  const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
 
 
   const goLeft = () => {
@@ -19,8 +20,45 @@ const CentralButtons = ({ setX, x }: Props) => {
     setX(x - 100);
   };
 
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  // the required distance between touchStart and touchEnd to be detected as a swipe
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: any) => {
+
+    setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: any) => setTouchEnd(e.targetTouches[0].clientX);
+
+  const onTouchEnd = () => {
+
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe || isRightSwipe) {
+      if (isLeftSwipe) {
+        goRight();
+      }
+      if (isRightSwipe) {
+        goLeft();
+
+      }
+    }
+  };
+
   return (
     <div
+
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
       style={{
 
         position: "absolute",
@@ -32,7 +70,7 @@ const CentralButtons = ({ setX, x }: Props) => {
         zIndex: 2000,
       }}
     >
-      <div
+      {!mobile && (<div
         style={{
           marginTop: "-2%",
           display: "flex",
@@ -42,7 +80,8 @@ const CentralButtons = ({ setX, x }: Props) => {
       >
         <Ball onClick={goLeft} />
         <Ball onClick={goRight} />
-      </div>
+      </div>)}
+
 
     </div>
   );
