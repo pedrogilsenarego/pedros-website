@@ -36,7 +36,7 @@ const MyMesh = ({
 };
 
 const Boxes = ({ x, color, metalness, roughness, clearcoatRoughness }) => {
-  const [render, setRender] = useState(false);
+  const [render, setRender] = useState(true);
   const configMesh = {
     render,
     color,
@@ -45,16 +45,16 @@ const Boxes = ({ x, color, metalness, roughness, clearcoatRoughness }) => {
     clearcoatRoughness,
   };
 
-  useEffect(() => {
-    if (x === 0 || x === -100) {
-      setTimeout(() => {
-        setRender(false);
-      }, 1000);
-    }
-    if (x === -200) {
-      setRender(true);
-    }
-  }, [x]);
+  // useEffect(() => {
+  //   if (x === 0 || x === -100) {
+  //     setTimeout(() => {
+  //       setRender(false);
+  //     }, 1000);
+  //   }
+  //   if (x === -200) {
+  //     setRender(true);
+  //   }
+  // }, [x]);
 
   return (
     <Canvas shadows dpr={[1, 2]} camera={{ position: [30, 70, 400], fov: 1.5 }}>

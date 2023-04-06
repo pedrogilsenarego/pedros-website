@@ -4,6 +4,7 @@ import Boxes2 from "../Boxes2";
 import Boxes3 from "../Boxes3";
 import Message from "./Message";
 import { useMediaQuery, useTheme } from "@mui/material";
+import { useEffect, useState } from "react";
 
 interface Props {
   x: number;
@@ -15,6 +16,16 @@ const Slider = ({ x }: Props) => {
   const configBox = {
     x,
   };
+
+  const [translateX, setTranslateX] = useState(0);
+
+  useEffect(() => {
+    const updateTransform = () => {
+      setTranslateX(x);
+      requestAnimationFrame(updateTransform);
+    };
+    updateTransform();
+  }, [x]);
 
   let sliderArr = [
     <Boxes
@@ -68,11 +79,13 @@ const Slider = ({ x }: Props) => {
       {sliderArr.map((item, index) => {
         return (
           <Container
+
             style={{
               minWidth: "100%",
               zIndex: "1",
-              transition: "0.5s",
-              transform: `translateX(${x}%)`,
+              transition: "all 0.5s ease-in-out",
+              transform: `translateX(${translateX}%) translateZ(0)`,
+              willChange: "transform"
             }}
             key={index}
           >

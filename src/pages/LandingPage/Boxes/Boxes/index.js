@@ -47,16 +47,16 @@ const Boxes = ({ x, color, metalness, roughness, clearcoatRoughness }) => {
     clearcoatRoughness,
   };
 
-  useEffect(() => {
-    if (x === -100) {
-      setTimeout(() => {
-        setRender(false);
-      }, 1000);
-    }
-    if (x === 0) {
-      setRender(true);
-    }
-  }, [x]);
+  // useEffect(() => {
+  //   if (x === -100) {
+  //     setTimeout(() => {
+  //       setRender(false);
+  //     }, 1000);
+  //   }
+  //   if (x === 0) {
+  //     setRender(true);
+  //   }
+  // }, [x]);
 
   return (
     <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 70, 400], fov: 1.5 }}>
