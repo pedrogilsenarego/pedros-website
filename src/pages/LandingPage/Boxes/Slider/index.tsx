@@ -4,18 +4,16 @@ import Boxes2 from "../Boxes2";
 import Boxes3 from "../Boxes3";
 import Message from "./Message";
 import { useMediaQuery, useTheme } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { LandingPageContext } from "../../LandingPageContext";
 
-interface Props {
-  x: number;
-}
 
-const Slider = ({ x }: Props) => {
+
+const Slider = () => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
-  const configBox = {
-    x,
-  };
+  const { height, x } = useContext(LandingPageContext);
+
 
   const [translateX, setTranslateX] = useState(0);
 
@@ -29,21 +27,21 @@ const Slider = ({ x }: Props) => {
 
   let sliderArr = [
     <Boxes
-      {...configBox}
+      x={x}
       color='#E5E4E1'
       metalness='0.5'
       roughness='0.1'
       clearcoatRoughness='0.9'
     />,
     <Boxes2
-      {...configBox}
+      x={x}
       color='#155C9B'
       metalness='0.9'
       roughness='0.5'
       clearcoatRoughness='0.1'
     />,
     <Boxes3
-      {...configBox}
+      x={x}
       color='purple'
       metalness='0.9'
       roughness='0.5'
@@ -53,10 +51,12 @@ const Slider = ({ x }: Props) => {
   ];
 
 
+
+
   return (
     <div
       style={{
-        height: "100vh",
+        height: `${height}px`,
         width: "100%",
         display: "flex",
         overflow: "hidden",

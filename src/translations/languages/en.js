@@ -7,6 +7,9 @@ export const content = {
       initial: {
         firstSentence: "Everyone is different...",
         secondSentence: "What color lives inside you?",
+        blueFirst: "So you like funky...",
+        purpleFirst: "Oh... I see where this is gooing...",
+        redFirst: "I guess you asked for it",
       },
     },
   },

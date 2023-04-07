@@ -1,15 +1,13 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Ball from "./Ball";
 import { useMediaQuery, useTheme } from "@mui/material";
-interface Props {
-  setX: (x: number) => void;
-  x: number
-}
-const CentralButtons = ({ setX, x }: Props) => {
+import { LandingPageContext } from "../../LandingPageContext";
+
+const CentralButtons = () => {
 
   const Theme = useTheme()
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
-
+  const { setX, x } = useContext(LandingPageContext);
 
   const goLeft = () => {
     if (x === 0) return
@@ -53,6 +51,17 @@ const CentralButtons = ({ setX, x }: Props) => {
     }
   };
 
+  const [height, setHeight] = useState(window.innerHeight);
+  useEffect(() => {
+    const handleResize = () => {
+      setHeight(window.innerHeight);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div
 
@@ -63,7 +72,7 @@ const CentralButtons = ({ setX, x }: Props) => {
 
         position: "absolute",
         width: "100vw",
-        height: "100vh",
+        height: `${height}px`,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

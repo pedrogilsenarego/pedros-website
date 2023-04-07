@@ -1,13 +1,14 @@
 
+import { useContext } from "react";
 import HackerLettering from "../../components/HackerLettering";
 import { Colors } from "../../constants/pallete";
 import WatchLab from "./Boxes";
-import { LandingPageContextProvider } from "./LandingPageContext";
+import { LandingPageContext, LandingPageContextProvider } from "./LandingPageContext";
 
 
 
 const LandingPage = () => {
-
+  const { height } = useContext(LandingPageContext);
 
   return (
     <LandingPageContextProvider>
@@ -15,11 +16,12 @@ const LandingPage = () => {
 
         style={{
           width: "100vw",
-          height: "100vh",
+          height: `${height}px`,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          position: "relative"
+          position: "relative",
+          overflow: "hidden !important"
 
         }}
       >

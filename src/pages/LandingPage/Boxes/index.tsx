@@ -9,8 +9,8 @@ import { LandingPageContext } from "../LandingPageContext";
 
 
 const Boxes = () => {
-  const { configCentralButtons, configSlider, } = useWatchLab();
-  const { boxesOpacity } = useContext(LandingPageContext);
+  const { configCentralButtons, } = useWatchLab();
+  const { boxesOpacity, height } = useContext(LandingPageContext);
 
   return (
     <>
@@ -18,7 +18,7 @@ const Boxes = () => {
 
         style={{
           flexDirection: "column",
-          height: "100vh",
+          height: `${height}px`,
           position: "absolute",
           width: "100vw",
           display: "flex",
@@ -30,10 +30,8 @@ const Boxes = () => {
           overflow: "hidden !important",
         }}
       >
-        <CentralButtons {...configCentralButtons} />
-
-
-        <Slider {...configSlider} />
+        <CentralButtons />
+        <Slider />
 
       </div>
     </>
