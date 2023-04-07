@@ -6,9 +6,10 @@ interface Props {
   message: string;
   color?: string;
   borderColor?: string;
+  startAudio: () => void
 }
 
-const HackerLettering = ({ message, color, borderColor }: Props) => {
+const HackerLettering = ({ message, color, borderColor, startAudio }: Props) => {
   const Theme = useTheme()
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"))
   const letters = "ABCDEFGHIJKLMNOPQRSTUVXWYZ0123456789+-";
@@ -51,25 +52,28 @@ const HackerLettering = ({ message, color, borderColor }: Props) => {
   const handleGoBox = (e: any) => {
     e.preventDefault()
     setMobileFirstTouch(true)
+
     setTimeout(() => {
       setGoHome(true);
+      startAudio()
       setTimeout(() => {
         setBoxesOpacity(true)
         setHide(true)
       }, 1700);
-    })
+    }, 500)
   };
 
   const handleMobile = (e: any) => {
     e.preventDefault()
-    if (!mobileFirstTouch) setMobileFirstTouch(true)
+    if (!mobileFirstTouch) { setMobileFirstTouch(true); startAudio() }
     else setTimeout(() => {
+
       setGoHome(true);
       setTimeout(() => {
         setBoxesOpacity(true)
         setHide(true)
       }, 1700);
-    })
+    }, 500)
   }
 
   return (
@@ -89,7 +93,7 @@ const HackerLettering = ({ message, color, borderColor }: Props) => {
       >
         <div
           style={{ cursor: "pointer", display: "flex", position: "relative" }}
-          onMouseEnter={() => setStopEffect(true)}
+          onMouseEnter={(e) => { setStopEffect(true); }}
           onMouseLeave={() => setStopEffect(false)}
         >
           {message.split("").map((item, pos) => {
