@@ -18,16 +18,22 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -ms-overflow-style: none !important;  /* IE and Edge */
-  scrollbar-width: none !important;  /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
   overflow-x: hidden !important;
- 
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   display: none !important;
 }
 
 code {
   font-family: "Termina";
+}
+
+:root {
+  --background-rgb: 29 30 34;
+
+  --blue-rgb: 33 150 243;
+  --primary-rgb: var(--blue-rgb);
 }
