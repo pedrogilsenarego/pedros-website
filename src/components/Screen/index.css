@@ -10,7 +10,6 @@
   z-index: 10;
   box-shadow: 0 0 1rem rgba(144, 144, 203, 0.25),
     0 0 2rem rgba(144, 144, 203, 0.25), 0 0 3rem rgba(144, 144, 203, 0.25);
-  transform: perspective(800px) rotateX(25deg);
 }
 
 .screen:after,

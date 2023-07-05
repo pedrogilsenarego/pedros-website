@@ -1,9 +1,22 @@
+import { useState } from "react";
 import "./index.css";
 
 const Screen = () => {
+  const [press, setPress] = useState<boolean>(false);
+
   return (
     <>
-      <div className="screen">
+      <div
+        className="screen"
+        onClick={() => setPress(!press)}
+        style={{
+          cursor: "pointer",
+          transform: press
+            ? "perspective(800px) rotateX(-15deg)"
+            : "perspective(800px) rotateX(25deg)",
+          transition: "all 2s ease-in-out",
+        }}
+      >
         <div className="screen-image" />
         <div className="screen-overlay"></div>
         <div className="screen-content">

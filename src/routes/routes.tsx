@@ -1,27 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { AppRoute } from "./types";
 import { ROUTE_PATHS } from "../constants/routes";
 import { lazyWithRetryAndLoader } from "../utils/lazyWithRetry";
+import { AppRoute } from "./types";
 
-
-
-const LandingPage = lazyWithRetryAndLoader(() => import("../pages/LandingPage"))
-const Home = lazyWithRetryAndLoader(() => import("../pages/Home"))
-
-
+const LandingPage = lazyWithRetryAndLoader(
+  () => import("../pages/LandingPage")
+);
+const Home = lazyWithRetryAndLoader(() => import("../pages/Home"));
 
 export const routes: AppRoute[] = [
   {
     path: ROUTE_PATHS.LANDING_PAGE,
-    component: (
-      <LandingPage />
-    )
+    component: <Home />,
   },
   {
     path: ROUTE_PATHS.HOME,
-    component: (
-      <Home />
-    )
+    component: <Home />,
   },
-
 ];
