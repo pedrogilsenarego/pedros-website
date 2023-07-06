@@ -1,9 +1,12 @@
 import Screen from "../../components/Screen";
+import SideBar from "../../presentional/SideBar";
 import Contact from "./Contact";
 import Skills from "./Skills";
+import Work from "./Work";
 const Home = () => {
   return (
     <>
+      <SideBar />
       <div
         style={{
           paddingRight: "10vw",
@@ -17,6 +20,7 @@ const Home = () => {
       >
         <Screen />
       </div>
+      <Work />
       <Skills />
       <div
         style={{
