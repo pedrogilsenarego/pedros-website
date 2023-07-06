@@ -1,26 +1,34 @@
 .screen {
   width: 300px;
   display: flex;
-  border: 2px solid rgba(195, 195, 213, 0.614);
+  /*border: 2px solid rgba(8, 8, 35, 0.864);*/
   aspect-ratio: 10 / 16;
-  border-radius: 1rem;
+  /*border-radius: 1rem;*/
   background-color: rgb(var(--primary-rgb) / 15%);
   overflow: hidden;
   position: relative;
   z-index: 10;
-  box-shadow: 0 0 1rem rgba(144, 144, 203, 0.25),
-    0 0 2rem rgba(144, 144, 203, 0.25), 0 0 3rem rgba(144, 144, 203, 0.25);
-}
-
-.screen:after,
-.screen:before {
-  content: "";
-  height: 5px;
-  position: absolute;
-  z-index: 4;
-  left: 50%;
-  translate: -50% 0%;
-  background-color: rgba(255, 255, 255, 0.7);
+  clip-path: polygon(
+    0% 4%,
+    7% 0%,
+    30% 0%,
+    34% 1.5%,
+    66% 1.5%,
+    70% 0%,
+    93% 0%,
+    100% 4%,
+    100% 96%,
+    93% 100%,
+    70% 100%,
+    66% 98.5%,
+    34% 98.5%,
+    30% 100%,
+    7% 100%,
+    0% 96%
+  );
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  /*box-shadow: 0 0 2px rgba(6, 6, 38, 0.914), 0 0 2rem rgba(144, 144, 203, 0.25),
+    0 0 3rem rgba(144, 144, 203, 0.25);*/
 }
 
 .screen:before {
@@ -49,8 +57,8 @@
 
 .screen-overlay {
   background: linear-gradient(
-    rgb(var(--primary-rgb) / 0.15),
-    rgb(var(--primary-rgb) / 0.15) 3px,
+    rgb(var(--primary-rgb) / 0.05),
+    rgb(var(--primary-rgb) / 0.05) 3px,
     transparent 3px,
     transparent 9px
   );
@@ -121,7 +129,6 @@
 }
 
 .screen > .screen-image {
-  background-image: url("https://avatars.githubusercontent.com/u/87972406?v=4");
   height: 100%;
   width: 100%;
   position: absolute;
@@ -196,18 +203,18 @@
   height: 4px;
   width: 4px;
   position: absolute;
-  border: 2px solid white;
+  border: 2px solid rgba(255, 255, 255, 0.7);
   border-radius: 2px;
 }
 
 .screen > .screen-content > .screen-user > .name:before {
-  top: 55%;
-  right: -1.5rem;
+  top: 42%;
+  right: -0.7rem;
 }
 
 .screen > .screen-content > .screen-user > .name:after {
-  top: 45%;
-  left: -1.5rem;
+  top: 42%;
+  left: -0.7rem;
 }
 
 .screen > .screen-content > .screen-user > .link {
