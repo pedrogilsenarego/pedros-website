@@ -2,7 +2,7 @@
   width: 300px;
   display: flex;
   /*border: 2px solid rgba(8, 8, 35, 0.864);*/
-  aspect-ratio: 10 / 16;
+  height: 480px;
   /*border-radius: 1rem;*/
   background-color: rgb(var(--primary-rgb) / 15%);
   overflow: hidden;

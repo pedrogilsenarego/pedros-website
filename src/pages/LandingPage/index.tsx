@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import HackerLettering from "../../components/HackerLettering";
 import { Colors } from "../../constants/pallete";
+import { ROUTE_PATHS } from "../../constants/routes";
 import WatchLab from "./Boxes";
 import {
   LandingPageContext,
@@ -14,6 +16,7 @@ const LandingPage = () => {
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [musicUrl, setMusicUrl] = useState("");
+  const navigate = useNavigate();
 
   const togglePlay = () => {
     setIsPlaying(true);
@@ -54,13 +57,15 @@ const LandingPage = () => {
             onEnded={togglePlay}
           />
         )}
-        <HackerLettering
-          startAudio={togglePlay}
-          message="<Web Engineering/>"
-          color={Colors.BLACKISH}
-          borderColor={Colors.BLACKISH_TRANSPARENT}
-        />
-        <WatchLab />
+        <div onClick={() => navigate(ROUTE_PATHS.HOME)}>
+          <HackerLettering
+            startAudio={togglePlay}
+            message="<Web Engineering/>"
+            color={Colors.BLACKISH}
+            borderColor={Colors.BLACKISH_TRANSPARENT}
+          />
+          <WatchLab />
+        </div>
       </div>
     </LandingPageContextProvider>
   );

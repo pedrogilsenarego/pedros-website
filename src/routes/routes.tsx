@@ -11,7 +11,7 @@ const Home = lazyWithRetryAndLoader(() => import("../pages/Home"));
 export const routes: AppRoute[] = [
   {
     path: ROUTE_PATHS.LANDING_PAGE,
-    component: <Home />,
+    component: <LandingPage />,
   },
   {
     path: ROUTE_PATHS.HOME,
