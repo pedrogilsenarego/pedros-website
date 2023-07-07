@@ -20,7 +20,12 @@ const Work = () => {
             <GlowingTiles />
           </Grid>
           <Grid item xs={3}>
-            <span style={{ fontSize: "40px", color: "white" }}>
+            <span
+              style={{
+                fontSize: "30px",
+                color: "white",
+              }}
+            >
               Helping brands to stand out in the digital era.
             </span>
           </Grid>

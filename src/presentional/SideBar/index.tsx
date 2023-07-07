@@ -25,7 +25,7 @@ const SideBar = () => {
             rowGap: 1,
             position: "fixed",
             zIndex: 3000,
-            left: "5vw",
+            left: "2vw",
             transform: scrollToL ? "translate(-50px,0)" : "translate(0,0)",
             top: "45%",
             transition: "all 0.4s ease-in-out",
