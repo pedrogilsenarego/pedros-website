@@ -8,7 +8,6 @@ const Skills = () => {
         alignItems: "center",
         height: "100vh",
         width: "100vw",
-        backgroundColor: "black",
       }}
     >
       <span style={{ fontSize: "100px", color: "white" }}>Skills</span>

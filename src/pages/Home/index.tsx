@@ -1,11 +1,16 @@
 import Screen from "../../components/Screen";
+import { Colors } from "../../constants/pallete";
 import SideBar from "../../presentional/SideBar";
 import Contact from "./Contact";
 import Skills from "./Skills";
 import Work from "./Work";
 const Home = () => {
   return (
-    <>
+    <div
+      style={{
+        backgroundColor: Colors.BLACKISH,
+      }}
+    >
       <SideBar />
       <div
         style={{
@@ -15,7 +20,6 @@ const Home = () => {
           alignItems: "center",
           height: "100vh",
           width: "100vw",
-          backgroundColor: "black",
         }}
       >
         <Screen />
@@ -30,12 +34,11 @@ const Home = () => {
           alignItems: "center",
           height: "100vh",
           width: "100vw",
-          backgroundColor: "black",
         }}
       >
         <Contact />
       </div>
-    </>
+    </div>
   );
 };
 

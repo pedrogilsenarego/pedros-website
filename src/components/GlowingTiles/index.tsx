@@ -24,10 +24,10 @@ const GlowingTiles = () => {
       cardsElement?.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
-  const Tile = () => {
+  const Tile = ({ children }: any) => {
     return (
       <Grid item xs={4}>
-        <div className="card"></div>
+        <div className="card">{children}</div>
       </Grid>
     );
   };
@@ -40,11 +40,9 @@ const GlowingTiles = () => {
       id="cards"
     >
       <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
+      <Tile>
+        <div>Test</div>
+      </Tile>
     </Grid>
   );
 };
