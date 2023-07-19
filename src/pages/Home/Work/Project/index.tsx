@@ -5,9 +5,10 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-
 import { useState } from "react";
 import { MdExpandMore } from "react-icons/md";
+import imageLaptop from "../../../../assets/images/projects/abolina/laptop.svg";
+import imageMobile from "../../../../assets/images/projects/abolina/mobile.svg";
 import { Colors } from "../../../../constants/pallete";
 import "./index.css";
 
@@ -68,7 +69,7 @@ const Project = ({ index }: Props) => {
           </div>
         </AccordionSummary>
         <AccordionDetails>
-          <Grid container mt="20px">
+          <Grid container mt="20px" columnSpacing="30px">
             <Grid item xs={6}>
               <Typography
                 className="gradient-text"
@@ -125,6 +126,16 @@ const Project = ({ index }: Props) => {
               >
                 www.Abolina.com
               </Typography>
+            </Grid>
+            <Grid item xs={6} display="flex" columnGap="20px">
+              <img src={imageLaptop} alt="" width="500px" height="500px" />
+              <img
+                src={imageMobile}
+                alt=""
+                width="200px"
+                height="500px"
+                style={{}}
+              />
             </Grid>
           </Grid>
         </AccordionDetails>
