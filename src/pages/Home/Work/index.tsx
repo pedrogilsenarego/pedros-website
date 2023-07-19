@@ -1,6 +1,7 @@
 import { Container, Grid } from "@mui/material";
 import GlowingTiles from "../../../components/GlowingTiles";
 import Project from "./Project";
+import { IProject, listProjects } from "./constants";
 
 const Work = () => {
   return (
@@ -48,10 +49,9 @@ const Work = () => {
             rowGap: "20px",
           }}
         >
-          <Project />
-          <Project />
-          <Project />
-          <Project />
+          {listProjects.map((project: IProject, index: number) => {
+            return <Project index={index} />;
+          })}
         </div>
       </Container>
     </div>

@@ -11,7 +11,11 @@ import { MdExpandMore } from "react-icons/md";
 import { Colors } from "../../../../constants/pallete";
 import "./index.css";
 
-const Project = () => {
+interface Props {
+  index: number;
+}
+
+const Project = ({ index }: Props) => {
   const [hoverTitle, setHoverTitle] = useState<boolean>(false);
   const [hoverLink, setHoverLink] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
@@ -50,7 +54,7 @@ const Project = () => {
               }}
               color={hoverTitle ? Colors.WHITE : Colors.WHITE_SMUDGE}
             >
-              PROJECT &#x2022; 03
+              PROJECT &#x2022; 0{index + 1}
             </Typography>
             <div
               className={`gradient-transition ${hoverTitle ? "active" : ""}`}
