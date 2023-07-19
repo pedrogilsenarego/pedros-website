@@ -1,6 +1,5 @@
 import { Container, Grid } from "@mui/material";
 import GlowingTiles from "../../../components/GlowingTiles";
-import { Colors } from "../../../constants/pallete";
 import Project from "./Project";
 
 const Work = () => {
@@ -40,7 +39,18 @@ const Work = () => {
             </span>
           </Grid>
         </Grid>
-        <div style={{ marginTop: "50px" }}>
+
+        <div
+          style={{
+            marginTop: "50px",
+            display: "flex",
+            flexDirection: "column",
+            rowGap: "20px",
+          }}
+        >
+          <Project />
+          <Project />
+          <Project />
           <Project />
         </div>
       </Container>
