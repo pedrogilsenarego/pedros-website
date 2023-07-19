@@ -2,6 +2,7 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
+  Box,
   Grid,
   Typography,
 } from "@mui/material";
@@ -58,12 +59,12 @@ const Project = ({ index }: Props) => {
               PROJECT &#x2022; 0{index + 1}
             </Typography>
             <div
-              className={`gradient-transition ${hoverTitle ? "active" : ""}`}
               style={{
                 height: "2px",
                 width: "150px",
-
-                background: `linear-gradient(90deg, ${Colors.BLUE_TRANSPARENT} 0%, ${Colors.BLACKISH} 100%)`,
+                transition: "opacity 1s ease-in-out",
+                opacity: hoverTitle ? 1 : 0.5,
+                background: `linear-gradient(90deg, ${Colors.BLUE_TRANSPARENT_MID} 0%, ${Colors.BLACKISH} 100%)`,
               }}
             />
           </div>
