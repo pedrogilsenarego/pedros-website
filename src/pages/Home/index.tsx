@@ -2,6 +2,7 @@ import Screen from "../../components/Screen";
 import { Colors } from "../../constants/pallete";
 import SideBar from "../../presentional/SideBar";
 import Contact from "./Contact";
+import Initial from "./Initial";
 import Skills from "./Skills";
 import Work from "./Work";
 const Home = () => {
@@ -12,18 +13,7 @@ const Home = () => {
       }}
     >
       <SideBar />
-      <div
-        style={{
-          paddingRight: "10vw",
-          display: "flex",
-          justifyContent: "end",
-          alignItems: "center",
-          height: "100vh",
-          width: "100vw",
-        }}
-      >
-        <Screen />
-      </div>
+      <Initial />
       <Work />
       <Skills />
       <div

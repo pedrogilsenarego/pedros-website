@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./index.css";
 
 const Screen = () => {
@@ -11,7 +10,7 @@ const Screen = () => {
             top: "2px",
             left: "2px",
             cursor: "pointer",
-            transform: "perspective(800px) rotateX(25deg)",
+            //transform: "perspective(800px) rotateX(25deg)",
           }}
         >
           <div
