@@ -2,15 +2,14 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-  Box,
   Grid,
   Typography,
 } from "@mui/material";
 import { useState } from "react";
 import { MdExpandMore } from "react-icons/md";
 import imageLaptop from "../../../../assets/images/projects/abolina/laptop.svg";
+import logoSite from "../../../../assets/images/projects/abolina/logoSite.svg";
 import imageMobile from "../../../../assets/images/projects/abolina/mobile.svg";
-import { Icons } from "../../../../components/Icons";
 import { Colors } from "../../../../constants/pallete";
 import "./index.css";
 
@@ -76,13 +75,7 @@ const Project = ({ index }: Props) => {
                 }}
               />
             </div>
-
-            <Icons.Logo
-              style={{
-                color: "white",
-                height: "40px",
-              }}
-            />
+            <img src={logoSite} alt="" height="35px" />
           </div>
         </AccordionSummary>
         <AccordionDetails>
