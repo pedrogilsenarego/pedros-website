@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Colors } from "../../../constants/pallete";
 import Project from "./Project";
 import { IProject, listProjects } from "./constants";
+import "./index.css";
 
 const Work = () => {
   const [openAccordionIndex, setOpenAccordionIndex] = useState<number>(-1);
@@ -21,20 +22,36 @@ const Work = () => {
       }}
     >
       <span
+        className="gradient-text"
         style={{
-          fontSize: "45px",
+          fontSize: "55px",
           color: Colors.WHITE_SMUDGE,
-          textAlign: "end",
+          textAlign: "center",
+          paddingRight: "35px",
+          fontFamily: "Termina",
+          letterSpacing: "4px",
+          width: "100%",
+        }}
+      >
+        Case Studies
+      </span>
+      <span
+        className="gradient-text"
+        style={{
+          marginTop: "-15px",
+          fontSize: "30px",
+          color: Colors.WHITE_SMUDGE,
+          textAlign: "center",
+          paddingRight: "35px",
           fontFamily: "Termina",
           width: "100%",
         }}
       >
-        Helping brands to stand out in the digital era
+        &#x2022; Helping brands to stand out in the digital era &#x2022;
       </span>
-
       <div
         style={{
-          marginTop: "70px",
+          marginTop: "50px",
           display: "flex",
           flexDirection: "column",
           rowGap: "20px",
