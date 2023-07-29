@@ -1,9 +1,14 @@
-import { Container } from "@mui/material";
+import { useState } from "react";
 import { Colors } from "../../../constants/pallete";
 import Project from "./Project";
 import { IProject, listProjects } from "./constants";
 
 const Work = () => {
+  const [openAccordionIndex, setOpenAccordionIndex] = useState<number>(-1);
+
+  const handleAccordionToggle = (index: number) => {
+    setOpenAccordionIndex((prevIndex) => (prevIndex === index ? -1 : index));
+  };
   return (
     <div
       style={{
@@ -36,7 +41,14 @@ const Work = () => {
         }}
       >
         {listProjects.map((project: IProject, index: number) => {
-          return <Project index={index} />;
+          return (
+            <Project
+              key={index}
+              index={index}
+              isOpen={openAccordionIndex === index}
+              onToggle={() => handleAccordionToggle(index)}
+            />
+          );
         })}
       </div>
     </div>

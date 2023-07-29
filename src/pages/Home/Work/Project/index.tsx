@@ -16,9 +16,11 @@ import "./index.css";
 
 interface Props {
   index: number;
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
-const Project = ({ index }: Props) => {
+const Project = ({ index, isOpen, onToggle }: Props) => {
   const [hoverTitle, setHoverTitle] = useState<boolean>(false);
   const [hoverLink, setHoverLink] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
@@ -29,9 +31,11 @@ const Project = ({ index }: Props) => {
       }}
     >
       <Accordion
+        expanded={isOpen}
+        onChange={() => onToggle()}
         onMouseEnter={() => setHoverTitle(true)}
         onMouseLeave={() => setHoverTitle(false)}
-        sx={{ background: "transparent" }}
+        sx={{ background: Colors.BLACKISH_TRANSPARENT }}
       >
         <AccordionSummary
           expandIcon={<MdExpandMore />}
@@ -74,7 +78,7 @@ const Project = ({ index }: Props) => {
                   width: "150px",
                   transition: "opacity 1s ease-in-out",
                   opacity: hoverTitle ? 1 : 0.5,
-                  background: `linear-gradient(90deg, ${Colors.BLUE_TRANSPARENT_MID} 0%, ${Colors.BLACKISH} 100%)`,
+                  background: `linear-gradient(90deg, ${Colors.BLUE_TRANSPARENT_MID} 0%, ${Colors.BLACKISH_TRANSPARENT} 100%)`,
                 }}
               />
             </div>
