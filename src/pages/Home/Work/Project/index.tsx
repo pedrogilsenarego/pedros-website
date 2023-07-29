@@ -2,6 +2,7 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
+  Divider,
   Grid,
   Typography,
 } from "@mui/material";
@@ -89,7 +90,7 @@ const Project = ({ index }: Props) => {
           </div>
         </AccordionSummary>
         <AccordionDetails>
-          <Grid container mt="20px" columnSpacing="30px">
+          <Grid container mt="20px" mb="20px" columnSpacing="30px">
             <Grid item xs={6}>
               <Typography
                 className="gradient-text"
@@ -158,6 +159,44 @@ const Project = ({ index }: Props) => {
               />
             </Grid>
           </Grid>
+
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "end",
+              padding: "10px 30px 0px 0px",
+              gap: "10px",
+            }}
+          >
+            <div
+              style={{
+                height: "22px",
+                width: "22px",
+                borderRadius: "50%",
+                cursor: "pointer",
+                backgroundColor: "#ffffff66",
+              }}
+            />
+            <div
+              style={{
+                height: "22px",
+                width: "22px",
+                borderRadius: "50%",
+                cursor: "pointer",
+                backgroundColor: "#ffffff66",
+              }}
+            />
+            <div
+              style={{
+                height: "22px",
+                width: "22px",
+                borderRadius: "50%",
+                cursor: "pointer",
+                backgroundColor: "#ffffff66",
+              }}
+            />
+          </div>
         </AccordionDetails>
       </Accordion>
     </div>

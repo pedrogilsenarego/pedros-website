@@ -4,15 +4,25 @@ const Initial = () => {
   return (
     <div
       style={{
-        paddingLeft: "10vw",
+        padding: "10vh 10vw",
         display: "flex",
-        justifyContent: "start",
+        justifyContent: "space-between",
         alignItems: "center",
-        height: "100vh",
+
         width: "100vw",
+        columnGap: "5vw",
       }}
     >
       <Screen />
+      <div
+        style={{
+          boxShadow: "2px 2px 15px black",
+          flex: 1,
+          width: "500px",
+          height: "500px",
+          borderRadius: "6px",
+        }}
+      ></div>
     </div>
   );
 };
