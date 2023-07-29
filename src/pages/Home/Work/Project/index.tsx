@@ -27,7 +27,11 @@ const Project = ({ index }: Props) => {
         width: "100%",
       }}
     >
-      <Accordion sx={{ background: "transparent" }}>
+      <Accordion
+        onMouseEnter={() => setHoverTitle(true)}
+        onMouseLeave={() => setHoverTitle(false)}
+        sx={{ background: "transparent" }}
+      >
         <AccordionSummary
           expandIcon={<MdExpandMore />}
           aria-controls="panel1a-content"
@@ -42,8 +46,6 @@ const Project = ({ index }: Props) => {
           >
             <div
               onClick={() => setOpen(!open)}
-              onMouseEnter={() => setHoverTitle(true)}
-              onMouseLeave={() => setHoverTitle(false)}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -59,7 +61,7 @@ const Project = ({ index }: Props) => {
                   textShadow: hoverTitle
                     ? `0 0 8px ${Colors.WHITE_SMUDGE}, 0 0 12px ${Colors.WHITE_SMUDGE}, 0 0 18px ${Colors.WHITE_SMUDGE}`
                     : "none",
-                  transition: "all 0.6s ease-in",
+                  transition: "all 0.5s ease-in",
                 }}
                 color={hoverTitle ? Colors.WHITE : Colors.WHITE_SMUDGE}
               >
@@ -75,7 +77,15 @@ const Project = ({ index }: Props) => {
                 }}
               />
             </div>
-            <img src={logoSite} alt="" height="35px" />
+            <img
+              src={logoSite}
+              alt=""
+              height="35px"
+              style={{
+                opacity: hoverTitle ? 0.7 : 0.2,
+                transition: "all 0.5s ease-in",
+              }}
+            />
           </div>
         </AccordionSummary>
         <AccordionDetails>
@@ -130,7 +140,7 @@ const Project = ({ index }: Props) => {
                   textShadow: hoverLink
                     ? `0 0 8px ${Colors.WHITE_SMUDGE}, 0 0 12px ${Colors.WHITE_SMUDGE}, 0 0 18px ${Colors.WHITE_SMUDGE}`
                     : "none",
-                  transition: "all 0.6s ease-in",
+                  transition: "all 0.5s ease-in",
                 }}
                 mt="20px"
               >

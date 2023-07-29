@@ -1,5 +1,6 @@
 import { Container, Grid } from "@mui/material";
 import GlowingTiles from "../../../components/GlowingTiles";
+import { Colors } from "../../../constants/pallete";
 import Project from "./Project";
 import { IProject, listProjects } from "./constants";
 
@@ -16,30 +17,16 @@ const Work = () => {
       }}
     >
       <Container maxWidth="xl">
-        <Grid container spacing={"20px"}>
-          <Grid item xs={9}>
-            <GlowingTiles />
-          </Grid>
-          <Grid
-            item
-            xs={3}
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <span
-              style={{
-                fontSize: "30px",
-                color: "white",
-                textAlign: "center",
-              }}
-            >
-              Helping brands to stand out in the digital era.
-            </span>
-          </Grid>
-        </Grid>
+        <span
+          style={{
+            fontSize: "50px",
+            color: Colors.WHITE_SMUDGE,
+            textAlign: "center",
+            fontFamily: "Termina",
+          }}
+        >
+          Helping brands to stand out in the digital era
+        </span>
 
         <div
           style={{
