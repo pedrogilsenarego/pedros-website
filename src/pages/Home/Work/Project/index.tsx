@@ -10,6 +10,7 @@ import { useState } from "react";
 import { MdExpandMore } from "react-icons/md";
 import imageLaptop from "../../../../assets/images/projects/abolina/laptop.svg";
 import imageMobile from "../../../../assets/images/projects/abolina/mobile.svg";
+import { Icons } from "../../../../components/Icons";
 import { Colors } from "../../../../constants/pallete";
 import "./index.css";
 
@@ -34,37 +35,52 @@ const Project = ({ index }: Props) => {
           id="panel1a-header"
         >
           <div
-            onClick={() => setOpen(!open)}
-            onMouseEnter={() => setHoverTitle(true)}
-            onMouseLeave={() => setHoverTitle(false)}
             style={{
               display: "flex",
-              alignItems: "center",
-              cursor: "pointer",
-              columnGap: "20px",
+              justifyContent: "space-between",
+              width: "100%",
             }}
           >
-            <Typography
-              style={{
-                fontSize: "15px",
-                fontFamily: "Termina",
-                letterSpacing: "1px",
-                textShadow: hoverTitle
-                  ? `0 0 8px ${Colors.WHITE_SMUDGE}, 0 0 12px ${Colors.WHITE_SMUDGE}, 0 0 18px ${Colors.WHITE_SMUDGE}`
-                  : "none",
-                transition: "all 0.6s ease-in",
-              }}
-              color={hoverTitle ? Colors.WHITE : Colors.WHITE_SMUDGE}
-            >
-              PROJECT &#x2022; 0{index + 1}
-            </Typography>
             <div
+              onClick={() => setOpen(!open)}
+              onMouseEnter={() => setHoverTitle(true)}
+              onMouseLeave={() => setHoverTitle(false)}
               style={{
-                height: "2px",
-                width: "150px",
-                transition: "opacity 1s ease-in-out",
-                opacity: hoverTitle ? 1 : 0.5,
-                background: `linear-gradient(90deg, ${Colors.BLUE_TRANSPARENT_MID} 0%, ${Colors.BLACKISH} 100%)`,
+                display: "flex",
+                alignItems: "center",
+                cursor: "pointer",
+                columnGap: "20px",
+              }}
+            >
+              <Typography
+                style={{
+                  fontSize: "15px",
+                  fontFamily: "Termina",
+                  letterSpacing: "1px",
+                  textShadow: hoverTitle
+                    ? `0 0 8px ${Colors.WHITE_SMUDGE}, 0 0 12px ${Colors.WHITE_SMUDGE}, 0 0 18px ${Colors.WHITE_SMUDGE}`
+                    : "none",
+                  transition: "all 0.6s ease-in",
+                }}
+                color={hoverTitle ? Colors.WHITE : Colors.WHITE_SMUDGE}
+              >
+                PROJECT &#x2022; 0{index + 1}
+              </Typography>
+              <div
+                style={{
+                  height: "2px",
+                  width: "150px",
+                  transition: "opacity 1s ease-in-out",
+                  opacity: hoverTitle ? 1 : 0.5,
+                  background: `linear-gradient(90deg, ${Colors.BLUE_TRANSPARENT_MID} 0%, ${Colors.BLACKISH} 100%)`,
+                }}
+              />
+            </div>
+
+            <Icons.Logo
+              style={{
+                color: "white",
+                height: "40px",
               }}
             />
           </div>
