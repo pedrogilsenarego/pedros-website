@@ -11,7 +11,7 @@ const Initial = () => {
         alignItems: "center",
 
         width: "100vw",
-        columnGap: "5vw",
+        columnGap: "2vw",
       }}
     >
       <Screen />

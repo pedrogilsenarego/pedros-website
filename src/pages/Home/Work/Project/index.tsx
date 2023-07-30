@@ -105,7 +105,7 @@ const Project = ({ index, isOpen, onToggle }: Props) => {
           <Grid container mt="20px" mb="20px" columnSpacing="30px">
             <Grid item xs={6}>
               <Typography
-                className="gradient-text"
+                className="gradient-text2"
                 fontSize="35px"
                 fontFamily="Termina"
                 textTransform="uppercase"
