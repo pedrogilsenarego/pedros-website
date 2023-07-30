@@ -19,9 +19,10 @@ const Initial = () => {
         style={{
           boxShadow: "2px 2px 10px black",
           border: `solid 2px ${Colors.WHITE_ULTRA_TRANSPARENT}`,
+          background: `linear-gradient(15deg, ${Colors.BLACKISH_TRANSPARENT} 0%, ${Colors.WHITE_TRANSPARENT} 100%)`,
           flex: 1,
           width: "500px",
-          height: "580px",
+          height: "650px",
           borderRadius: "6px",
         }}
       ></div>

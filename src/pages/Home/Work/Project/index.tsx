@@ -23,6 +23,7 @@ interface Props {
 const Project = ({ index, isOpen, onToggle }: Props) => {
   const [hoverTitle, setHoverTitle] = useState<boolean>(false);
   const [hoverLink, setHoverLink] = useState<boolean>(false);
+  const [hoverMobile, setHoverMobile] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
   return (
     <div
@@ -36,7 +37,8 @@ const Project = ({ index, isOpen, onToggle }: Props) => {
         onMouseEnter={() => setHoverTitle(true)}
         onMouseLeave={() => setHoverTitle(false)}
         sx={{
-          background: Colors.BLACKISH_TRANSPARENT,
+          background: `linear-gradient(15deg, ${Colors.BLACKISH_TRANSPARENT} 0%, ${Colors.WHITE_TRANSPARENT} 100%)`,
+          //background: Colors.BLACKISH_TRANSPARENT,
           transition: "border 1s ease-in-out",
           boxShadow: "2px 2px 10px black",
           border:
@@ -102,7 +104,7 @@ const Project = ({ index, isOpen, onToggle }: Props) => {
           </div>
         </AccordionSummary>
         <AccordionDetails>
-          <Grid container mt="20px" mb="20px" columnSpacing="30px">
+          <Grid container mt="20px" mb="20px">
             <Grid item xs={6}>
               <Typography
                 className="gradient-text2"
@@ -160,14 +162,35 @@ const Project = ({ index, isOpen, onToggle }: Props) => {
                 www.Abolina.com
               </Typography>
             </Grid>
-            <Grid item xs={6} display="flex" columnGap="20px">
-              <img src={imageLaptop} alt="" width="500px" height="500px" />
+            <Grid
+              item
+              xs={6}
+              display="flex"
+              style={{
+                display: "relative",
+
+                transform: "translate(-20px, 0px)",
+              }}
+            >
+              <img src={imageLaptop} alt="" width="85%" />
               <img
+                onMouseEnter={() => setHoverMobile(true)}
+                onMouseLeave={() => setHoverMobile(false)}
                 src={imageMobile}
                 alt=""
                 width="200px"
-                height="500px"
-                style={{}}
+                height="200px"
+                style={{
+                  position: "absolute",
+                  right: 0,
+                  bottom: 25,
+                  cursor: "pointer",
+                  transition: "all 1s ease-in-out",
+                  transformStyle: "preserve-3d", // Preserve the 3D perspective
+                  transform: hoverMobile
+                    ? `scale(1.6) translate(-60px, -40px) `
+                    : `scale(1) `,
+                }}
               />
             </Grid>
           </Grid>
