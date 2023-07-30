@@ -9,6 +9,7 @@ import { useState } from "react";
 import { MdExpandMore } from "react-icons/md";
 import imageLaptop from "../../../../assets/images/projects/abolina/laptop.svg";
 import imageMobile from "../../../../assets/images/projects/abolina/mobile.svg";
+import audio from "../../../../assets/sounds/sound.wav";
 import { Colors } from "../../../../constants/pallete";
 import { WorkSource } from "../workSource";
 import "./index.css";
@@ -25,6 +26,11 @@ const Project = ({ index, isOpen, onToggle, project }: Props) => {
   const [hoverLink, setHoverLink] = useState<boolean>(false);
   const [hoverMobile, setHoverMobile] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
+
+  const play = () => {
+    new Audio(audio).play();
+  };
+
   return (
     <div
       style={{
@@ -48,6 +54,7 @@ const Project = ({ index, isOpen, onToggle, project }: Props) => {
         }}
       >
         <AccordionSummary
+          onClick={() => play()}
           expandIcon={<MdExpandMore />}
           aria-controls="panel1a-content"
           id="panel1a-header"
@@ -80,7 +87,8 @@ const Project = ({ index, isOpen, onToggle, project }: Props) => {
                 }}
                 color={hoverTitle ? Colors.WHITE : Colors.WHITE_SMUDGE}
               >
-                PROJECT &#x2022; 0{index + 1}
+                PROJECT &#x2022; {index < 9 && "0"}
+                {index + 1}
               </Typography>
               <div
                 style={{
