@@ -6,7 +6,6 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import { MdExpandMore } from "react-icons/md";
 import imageLaptop from "../../../../assets/images/projects/abolina/laptop.svg";
 import imageMobile from "../../../../assets/images/projects/abolina/mobile.svg";
 
@@ -89,7 +88,7 @@ const Project = ({ index, isOpen, onToggle, project, PlayAudio }: Props) => {
                 }}
                 color={hoverTitle ? Colors.WHITE : Colors.WHITE_SMUDGE}
               >
-                PROJECT &#x2017; {index < 9 && "0"}
+                PROJECT &#128900; {index < 9 && "0"}
                 {index + 1}
               </Typography>
               <div
@@ -162,6 +161,9 @@ const Project = ({ index, isOpen, onToggle, project, PlayAudio }: Props) => {
                 redefine the way readers connect with literature.
               </Typography>
               <Typography
+                onClick={() => {
+                  window.open(`https://${project.url}`, "_blank");
+                }}
                 onMouseEnter={() => setHoverLink(true)}
                 onMouseLeave={() => setHoverLink(false)}
                 fontSize="12px"
@@ -177,7 +179,7 @@ const Project = ({ index, isOpen, onToggle, project, PlayAudio }: Props) => {
                 }}
                 mt="20px"
               >
-                www.Abolina.com
+                {project.url}
               </Typography>
             </Grid>
             <Grid

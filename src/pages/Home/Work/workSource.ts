@@ -13,6 +13,7 @@ export interface WorkSource {
   logo: string;
   logoHeight?: string;
   title: string;
+  url: string;
 }
 
 export const workSource: WorkSource[] = [
@@ -20,50 +21,60 @@ export const workSource: WorkSource[] = [
     logo: logoSiteAbolina,
     logoHeight: "32px",
     title: "Digital Book Store",
+    url: "www.abolina.com",
   },
   {
     logo: logoSiteJumia,
     logoHeight: "25px",
     title: "E-Commerce in Africa",
+    url: "www.jumia.com",
   },
   {
     logo: logoSiteCGD,
     logoHeight: "35px",
     title: "Digital Book Store",
+    url: "www.abolina.com",
   },
   {
     logo: logoSiteOcto,
     logoHeight: "40px",
     title: "Digital Book Store",
+    url: "www.abolina.com",
   },
   {
     logo: logoSiteIpc,
     logoHeight: "44px",
     title: "Digital Book Store",
+    url: "www.abolina.com",
   },
   {
     logo: logoSiteSmartfreez,
     logoHeight: "40px",
     title: "Digital Book Store",
+    url: "www.abolina.com",
   },
   {
     logo: logoSiteSmartConsulting,
     logoHeight: "42px",
     title: "Digital Book Store",
+    url: "www.abolina.com",
   },
   {
     logo: logoSiteAralab,
     logoHeight: "80px",
     title: "Digital Book Store",
+    url: "www.abolina.com",
   },
   {
     logo: logoSiteHpDrones,
     logoHeight: "24px",
     title: "Digital Book Store",
+    url: "www.abolina.com",
   },
   {
     logo: logoSitePunchstories,
     logoHeight: "40px",
     title: "Digital Book Store",
+    url: "www.abolina.com",
   },
 ];
