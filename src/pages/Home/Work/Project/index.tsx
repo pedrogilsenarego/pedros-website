@@ -9,9 +9,10 @@ import { useState } from "react";
 import { MdExpandMore } from "react-icons/md";
 import imageLaptop from "../../../../assets/images/projects/abolina/laptop.svg";
 import imageMobile from "../../../../assets/images/projects/abolina/mobile.svg";
-import audio from "../../../../assets/sounds/sound.wav";
+
 import { Colors } from "../../../../constants/pallete";
 import { WorkSource } from "../workSource";
+import BottomButton from "./BottomButton";
 import "./index.css";
 
 interface Props {
@@ -19,15 +20,14 @@ interface Props {
   isOpen: boolean;
   onToggle: () => void;
   project: WorkSource;
+  PlayAudio: HTMLAudioElement;
 }
 
-const Project = ({ index, isOpen, onToggle, project }: Props) => {
+const Project = ({ index, isOpen, onToggle, project, PlayAudio }: Props) => {
   const [hoverTitle, setHoverTitle] = useState<boolean>(false);
   const [hoverLink, setHoverLink] = useState<boolean>(false);
   const [hoverMobile, setHoverMobile] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
-
-  const PlayAudio = new Audio(audio);
 
   const play = () => {
     PlayAudio.play();
@@ -57,7 +57,7 @@ const Project = ({ index, isOpen, onToggle, project }: Props) => {
       >
         <AccordionSummary
           onClick={() => play()}
-          expandIcon={<MdExpandMore />}
+          expandIcon={false}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
@@ -89,7 +89,7 @@ const Project = ({ index, isOpen, onToggle, project }: Props) => {
                 }}
                 color={hoverTitle ? Colors.WHITE : Colors.WHITE_SMUDGE}
               >
-                PROJECT &#x2022; {index < 9 && "0"}
+                PROJECT &#x2017; {index < 9 && "0"}
                 {index + 1}
               </Typography>
               <div
@@ -222,33 +222,9 @@ const Project = ({ index, isOpen, onToggle, project }: Props) => {
               gap: "10px",
             }}
           >
-            <div
-              style={{
-                height: "22px",
-                width: "22px",
-                borderRadius: "50%",
-                cursor: "pointer",
-                backgroundColor: "#ffffff66",
-              }}
-            />
-            <div
-              style={{
-                height: "22px",
-                width: "22px",
-                borderRadius: "50%",
-                cursor: "pointer",
-                backgroundColor: "#ffffff66",
-              }}
-            />
-            <div
-              style={{
-                height: "22px",
-                width: "22px",
-                borderRadius: "50%",
-                cursor: "pointer",
-                backgroundColor: "#ffffff66",
-              }}
-            />
+            <BottomButton isActive={true} />
+            <BottomButton isActive={false} />
+            <BottomButton isActive={false} />
           </div>
         </AccordionDetails>
       </Accordion>

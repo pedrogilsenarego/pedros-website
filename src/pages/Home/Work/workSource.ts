@@ -38,7 +38,7 @@ export const workSource: WorkSource[] = [
   },
   {
     logo: logoSiteIpc,
-    logoHeight: "47px",
+    logoHeight: "44px",
     title: "Digital Book Store",
   },
   {
@@ -63,7 +63,7 @@ export const workSource: WorkSource[] = [
   },
   {
     logo: logoSitePunchstories,
-    logoHeight: "45px",
+    logoHeight: "40px",
     title: "Digital Book Store",
   },
 ];

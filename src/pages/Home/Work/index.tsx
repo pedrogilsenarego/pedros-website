@@ -1,13 +1,13 @@
 import { useState } from "react";
+import audio from "../../../assets/sounds/sound.wav";
 import { Colors } from "../../../constants/pallete";
 import Project from "./Project";
-
 import "./index.css";
 import { WorkSource, workSource } from "./workSource";
 
 const Work = () => {
   const [openAccordionIndex, setOpenAccordionIndex] = useState<number>(-1);
-
+  const PlayAudio = new Audio(audio);
   const handleAccordionToggle = (index: number) => {
     setOpenAccordionIndex((prevIndex) => (prevIndex === index ? -1 : index));
   };
@@ -61,6 +61,7 @@ const Work = () => {
         {workSource.map((project: WorkSource, index: number) => {
           return (
             <Project
+              PlayAudio={PlayAudio}
               project={project}
               key={index}
               index={index}
