@@ -35,7 +35,15 @@ const Project = ({ index, isOpen, onToggle }: Props) => {
         onChange={() => onToggle()}
         onMouseEnter={() => setHoverTitle(true)}
         onMouseLeave={() => setHoverTitle(false)}
-        sx={{ background: Colors.BLACKISH_TRANSPARENT }}
+        sx={{
+          background: Colors.BLACKISH_TRANSPARENT,
+          transition: "border 1s ease-in-out",
+          boxShadow: "2px 2px 10px black",
+          border:
+            isOpen || hoverTitle
+              ? `solid 2px ${Colors.WHITE_TRANSPARENT}`
+              : `solid 2px ${Colors.WHITE_ULTRA_TRANSPARENT}`,
+        }}
       >
         <AccordionSummary
           expandIcon={<MdExpandMore />}
@@ -102,7 +110,7 @@ const Project = ({ index, isOpen, onToggle }: Props) => {
                 fontFamily="Termina"
                 textTransform="uppercase"
               >
-                Àbolina - Book store
+                Digital Book Store
               </Typography>
               <Typography
                 fontSize="12px"
