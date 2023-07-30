@@ -2,25 +2,25 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-  Divider,
   Grid,
   Typography,
 } from "@mui/material";
 import { useState } from "react";
 import { MdExpandMore } from "react-icons/md";
 import imageLaptop from "../../../../assets/images/projects/abolina/laptop.svg";
-import logoSite from "../../../../assets/images/projects/abolina/logoSite.svg";
 import imageMobile from "../../../../assets/images/projects/abolina/mobile.svg";
 import { Colors } from "../../../../constants/pallete";
+import { WorkSource } from "../workSource";
 import "./index.css";
 
 interface Props {
   index: number;
   isOpen: boolean;
   onToggle: () => void;
+  project: WorkSource;
 }
 
-const Project = ({ index, isOpen, onToggle }: Props) => {
+const Project = ({ index, isOpen, onToggle, project }: Props) => {
   const [hoverTitle, setHoverTitle] = useState<boolean>(false);
   const [hoverLink, setHoverLink] = useState<boolean>(false);
   const [hoverMobile, setHoverMobile] = useState<boolean>(false);
@@ -92,15 +92,23 @@ const Project = ({ index, isOpen, onToggle }: Props) => {
                 }}
               />
             </div>
-            <img
-              src={logoSite}
-              alt=""
-              height="35px"
+            <div
               style={{
-                opacity: hoverTitle ? 0.7 : 0.2,
-                transition: "all 0.5s ease-in",
+                height: "30px",
+                display: "flex",
+                alignItems: "center",
               }}
-            />
+            >
+              <img
+                src={project.logo}
+                alt=""
+                height={project.logoHeight || "35px"}
+                style={{
+                  opacity: hoverTitle ? 0.7 : 0.2,
+                  transition: "all 0.5s ease-in",
+                }}
+              />
+            </div>
           </div>
         </AccordionSummary>
         <AccordionDetails>

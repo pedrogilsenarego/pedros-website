@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Colors } from "../../../constants/pallete";
 import Project from "./Project";
-import { IProject, listProjects } from "./constants";
+
 import "./index.css";
+import { WorkSource, workSource } from "./workSource";
 
 const Work = () => {
   const [openAccordionIndex, setOpenAccordionIndex] = useState<number>(-1);
@@ -57,9 +58,10 @@ const Work = () => {
           rowGap: "20px",
         }}
       >
-        {listProjects.map((project: IProject, index: number) => {
+        {workSource.map((project: WorkSource, index: number) => {
           return (
             <Project
+              project={project}
               key={index}
               index={index}
               isOpen={openAccordionIndex === index}

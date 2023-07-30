@@ -9,7 +9,7 @@ const Initial = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-
+        minHeight: "100vh",
         width: "100vw",
         columnGap: "2vw",
       }}
@@ -22,7 +22,7 @@ const Initial = () => {
           background: `linear-gradient(15deg, ${Colors.BLACKISH_TRANSPARENT} 0%, ${Colors.WHITE_TRANSPARENT} 100%)`,
           flex: 1,
           width: "500px",
-          height: "650px",
+          height: "590px",
           borderRadius: "6px",
         }}
       ></div>
