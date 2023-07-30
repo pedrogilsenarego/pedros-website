@@ -27,8 +27,10 @@ const Project = ({ index, isOpen, onToggle, project }: Props) => {
   const [hoverMobile, setHoverMobile] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
 
+  const PlayAudio = new Audio(audio);
+
   const play = () => {
-    new Audio(audio).play();
+    PlayAudio.play();
   };
 
   return (
@@ -128,7 +130,7 @@ const Project = ({ index, isOpen, onToggle, project }: Props) => {
                 fontFamily="Termina"
                 textTransform="uppercase"
               >
-                Digital Book Store
+                {project.title}
               </Typography>
               <Typography
                 fontSize="12px"

@@ -12,47 +12,58 @@ import logoSiteSmartfreez from "../../../assets/images/projects/smartfreez/logoS
 export interface WorkSource {
   logo: string;
   logoHeight?: string;
+  title: string;
 }
 
 export const workSource: WorkSource[] = [
   {
     logo: logoSiteAbolina,
     logoHeight: "32px",
+    title: "Digital Book Store",
   },
   {
     logo: logoSiteJumia,
     logoHeight: "25px",
+    title: "E-Commerce in Africa",
   },
   {
     logo: logoSiteCGD,
     logoHeight: "35px",
+    title: "Digital Book Store",
   },
   {
     logo: logoSiteOcto,
     logoHeight: "40px",
+    title: "Digital Book Store",
   },
   {
     logo: logoSiteIpc,
     logoHeight: "47px",
+    title: "Digital Book Store",
   },
   {
     logo: logoSiteSmartfreez,
     logoHeight: "40px",
+    title: "Digital Book Store",
   },
   {
     logo: logoSiteSmartConsulting,
     logoHeight: "42px",
+    title: "Digital Book Store",
   },
   {
     logo: logoSiteAralab,
     logoHeight: "80px",
+    title: "Digital Book Store",
   },
   {
     logo: logoSiteHpDrones,
     logoHeight: "24px",
+    title: "Digital Book Store",
   },
   {
     logo: logoSitePunchstories,
     logoHeight: "45px",
+    title: "Digital Book Store",
   },
 ];
