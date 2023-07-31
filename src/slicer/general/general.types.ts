@@ -9,7 +9,6 @@ const generalTypes = {
 export interface GeneralState {
   lang: string;
   scrollTo: number;
-  lastEndpoint: string;
 
   cookiePolicy: boolean;
 

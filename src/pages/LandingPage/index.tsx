@@ -3,71 +3,55 @@ import { useNavigate } from "react-router-dom";
 import HackerLettering from "../../components/HackerLettering";
 import { Colors } from "../../constants/pallete";
 import { ROUTE_PATHS } from "../../constants/routes";
-import WatchLab from "./Boxes";
-import {
-  LandingPageContext,
-  LandingPageContextProvider,
-} from "./LandingPageContext";
+
+import { MusicContext } from "../../providers/MusicProvider";
 
 const LandingPage = () => {
-  const { height } = useContext(LandingPageContext);
-  const audio =
-    "https://res.cloudinary.com/daantetcr/video/upload/v1680862176/personalWebsite/Air_-_Alone_in_Kyoto__ColdMP3.com_h7eva5.mp3";
-
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [musicUrl, setMusicUrl] = useState("");
+  const { setIsPlaying } = useContext(MusicContext);
+  const [stopEffect, setStopEffect] = useState<boolean>(false);
+  const [clicked, setClicked] = useState<boolean>(false);
   const navigate = useNavigate();
 
-  const togglePlay = () => {
-    setIsPlaying(true);
-  };
-
-  const fetchMusic = async () => {
-    try {
-      const response = await fetch(audio);
-      const blob = await response.blob();
-      setMusicUrl(URL.createObjectURL(blob));
-    } catch (error) {
-      console.error(error);
-    }
-  };
   useEffect(() => {
-    fetchMusic();
+    setIsPlaying(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <LandingPageContextProvider>
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        overflow: "hidden !important",
+        backgroundColor: Colors.BLACKISH,
+      }}
+    >
       <div
+        onClick={() => {
+          setClicked(true);
+          setIsPlaying(true);
+
+          setTimeout(() => navigate(ROUTE_PATHS.HOME), 3000);
+        }}
         style={{
-          width: "100vw",
-          height: `${height}px`,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          position: "relative",
-          overflow: "hidden !important",
+          opacity: clicked ? 0 : 1,
+          transition: "opacity 3s ease-in-out",
         }}
       >
-        {musicUrl && (
-          <audio
-            key={isPlaying.toString()}
-            src={musicUrl}
-            autoPlay={isPlaying}
-            onEnded={togglePlay}
-          />
-        )}
-        <div onClick={() => navigate(ROUTE_PATHS.HOME)}>
-          <HackerLettering
-            startAudio={togglePlay}
-            message="<Web Engineering/>"
-            color={Colors.BLACKISH}
-            borderColor={Colors.BLACKISH_TRANSPARENT}
-          />
-          <WatchLab />
-        </div>
+        <HackerLettering
+          clicked={clicked}
+          stopEffect={stopEffect}
+          setStopEffect={setStopEffect}
+          message="<Web Engineering/>"
+          color={Colors.WHITE_SMUDGE}
+          borderColor={Colors.WHITE_TRANSPARENT}
+        />
       </div>
-    </LandingPageContextProvider>
+    </div>
   );
 };
 

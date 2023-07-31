@@ -1,25 +1,30 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
+
 import { LandingPageContext } from "../../pages/LandingPage/LandingPageContext";
 
 interface Props {
   message: string;
   color?: string;
   borderColor?: string;
-  startAudio: () => void;
+  stopEffect: boolean;
+  clicked: boolean;
+  setStopEffect: (stopEffect: boolean) => void;
 }
 
 const HackerLettering = ({
   message,
   color,
   borderColor,
-  startAudio,
+  stopEffect,
+  setStopEffect,
+  clicked,
 }: Props) => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const letters = "ABCDEFGHIJKLMNOPQRSTUVXWYZ0123456789+-";
   const [randomNumbers, setRandomNumbers] = useState<number[]>([]);
-  const [stopEffect, setStopEffect] = useState<boolean>(false);
+
   const [counter, setCounter] = useState<number>(-1);
   const [showName, setShowName] = useState<boolean>(false);
   const [goHome, setGoHome] = useState<boolean>(false);
@@ -38,7 +43,7 @@ const HackerLettering = ({
   }, [message]);
 
   useEffect(() => {
-    if (stopEffect) {
+    if (stopEffect || clicked) {
       const intervalId = setInterval(() => {
         if (counter <= message.length) setCounter(counter + 1);
       }, 100);
@@ -46,7 +51,7 @@ const HackerLettering = ({
     }
     if (!stopEffect) setCounter(-1);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [stopEffect, counter]);
+  }, [stopEffect, counter, clicked]);
 
   useEffect(() => {
     if (stopEffect) {
@@ -54,7 +59,7 @@ const HackerLettering = ({
     }
   }, [stopEffect]);
 
-  const handleGoBox = (e: any) => {
+  /* const handleGoBox = (e: any) => {
     e.preventDefault();
     setMobileFirstTouch(true);
 
@@ -81,13 +86,13 @@ const HackerLettering = ({
           setHide(true);
         }, 1700);
       }, 500);
-  };
+  };*/
 
   return (
     <>
       {!hide && (
         <div
-          onClick={(e) => (mobile ? handleMobile(e) : handleGoBox(e))}
+          //onClick={(e) => (mobile ? handleMobile(e) : handleGoBox(e))}
           style={{
             zIndex: 1000,
             rowGap: mobile ? "15px" : "20px",
@@ -142,16 +147,16 @@ const HackerLettering = ({
           </div>
           <Typography
             style={{
-              textTransform: "uppercase",
               letterSpacing: "6px",
               fontSize: mobile ? "0.8rem" : "18px",
               opacity: showName ? 1 : 0,
               transition: "opacity 3s ease-in-out",
               color: color,
               cursor: "pointer",
+              fontFamily: "Termina",
             }}
           >
-            Pedro Sena Rego
+            &#128900; Pedro Sena Rego &#128900;
           </Typography>
         </div>
       )}

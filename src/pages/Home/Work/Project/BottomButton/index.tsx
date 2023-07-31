@@ -22,8 +22,8 @@ const BottomButton = ({ isActive }: Props) => {
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         style={{
-          height: isActive ? "15px" : "12px",
-          width: isActive ? "15px" : "12px",
+          height: isActive ? "15px" : "10px",
+          width: isActive ? "15px" : "10px",
           borderRadius: "50%",
 
           transition: "all 0.35s ease-in",

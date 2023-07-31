@@ -1,6 +1,6 @@
-import generalTypes from "./general.types";
+import generalTypes, { GeneralState } from "./general.types";
 
-const INITIAL_STATE = {
+const INITIAL_STATE: GeneralState = {
   lang: "EN",
   scrollTo: 0,
   cookiePolicy: true,

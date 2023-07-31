@@ -10,5 +10,5 @@ export const Colors = {
   WHITE_TRANSPARENT: "#ffffff0D",
   WHITE_ULTRA_TRANSPARENT: "#ffffff05",
   BLUE_TRANSPARENT: "rgba(0,212,255,0.2)",
-  BLUE_TRANSPARENT_MID: "rgba(0,212,255,0.3)",
+  BLUE_TRANSPARENT_MID: "rgba(0,212,255,0.5)",
 };

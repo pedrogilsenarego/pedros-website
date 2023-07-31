@@ -6,10 +6,12 @@
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap");
-
+html {
+  background-color: #08070a;
+}
 body {
   margin: 0;
-  background-color: rgb(8, 8, 8);
+  background-color: #08070a;
   font-family: "Termina";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

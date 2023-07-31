@@ -88,7 +88,7 @@ const Project = ({ index, isOpen, onToggle, project, PlayAudio }: Props) => {
                 }}
                 color={hoverTitle ? Colors.WHITE : Colors.WHITE_SMUDGE}
               >
-                PROJECT &#128900; {index < 9 && "0"}
+                &#128900; {index < 9 && "0"}
                 {index + 1}
               </Typography>
               <div
