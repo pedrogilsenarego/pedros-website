@@ -6,9 +6,11 @@ const generalTypes = {
   POSITION_VERTICAL: "POSITION_VERTICAL",
 };
 
+export type ListPos = "Home" | "Work";
+
 export interface GeneralState {
   lang: string;
-  scrollTo: number;
+  scrollTo: ListPos;
 
   cookiePolicy: boolean;
 

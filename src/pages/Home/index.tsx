@@ -1,11 +1,19 @@
-import Screen from "../../components/Screen";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Colors } from "../../constants/pallete";
 import SideBar from "../../presentional/SideBar";
+import { scrollTo } from "../../slicer/general/general.actions";
 import Contact from "./Contact";
 import Initial from "./Initial";
 import Skills from "./Skills";
 import Work from "./Work";
 const Home = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(scrollTo("Home"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div
       style={{

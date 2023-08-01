@@ -38,8 +38,8 @@ export const workSource: WorkSource[] = [
   {
     logo: logoSiteOcto,
     logoHeight: "40px",
-    title: "Digital Book Store",
-    url: "www.abolina.com",
+    title: "Designer Digital Store",
+    url: "www.octo-mistic.com",
   },
   {
     logo: logoSiteIpc,

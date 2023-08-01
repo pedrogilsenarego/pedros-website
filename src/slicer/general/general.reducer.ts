@@ -2,7 +2,7 @@ import generalTypes, { GeneralState } from "./general.types";
 
 const INITIAL_STATE: GeneralState = {
   lang: "EN",
-  scrollTo: 0,
+  scrollTo: "Home",
   cookiePolicy: true,
 
   positionVertical: false,

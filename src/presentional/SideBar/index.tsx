@@ -1,15 +1,9 @@
 import { useMediaQuery, useTheme } from "@mui/material";
-import { useSelector } from "react-redux";
 
-import { State } from "../../slicer/types";
 import Ball from "./Ball";
+import { list } from "./constants";
 
 const SideBar = () => {
-  const arr = [...Array(4)];
-
-  const scrollToL = useSelector<State, number>(
-    (state) => state.general.scrollTo
-  );
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("md"));
 
@@ -26,13 +20,12 @@ const SideBar = () => {
             position: "fixed",
             zIndex: 3000,
             left: "2vw",
-            transform: scrollToL ? "translate(-50px,0)" : "translate(0,0)",
             top: "45%",
             transition: "all 0.4s ease-in-out",
           }}
         >
-          {arr.map((item, pos) => {
-            return <Ball key={pos} pos={pos} scrollPos={scrollToL} />;
+          {list.map((item, pos) => {
+            return <Ball key={pos} pos={pos} value={item} />;
           })}
         </div>
       </>

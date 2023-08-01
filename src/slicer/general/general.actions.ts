@@ -5,7 +5,7 @@ export const updateLang = (lang: string) => ({
   payload: lang,
 });
 
-export const scrollTo = (signal: number | null) => ({
+export const scrollTo = (signal: string) => ({
   type: generalTypes.SCROLL,
   payload: signal,
 });

@@ -1,9 +1,33 @@
+import { useEffect, useRef } from "react";
+import { useSelector } from "react-redux";
 import Screen from "../../../components/Screen";
 import { Colors } from "../../../constants/pallete";
+import { State } from "../../../slicer/types";
 
 const Initial = () => {
+  const homeRef = useRef<HTMLDivElement>(null);
+
+  const scrollToL = useSelector<State, string>(
+    (state) => state.general.scrollTo
+  );
+  const handleScrollToContacts = () => {
+    if (null !== homeRef.current) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (scrollToL === "Home") {
+      handleScrollToContacts();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [scrollToL]);
   return (
     <div
+      ref={homeRef}
       style={{
         padding: "10vh 10vw",
         display: "flex",
