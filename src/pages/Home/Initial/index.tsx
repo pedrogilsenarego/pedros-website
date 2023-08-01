@@ -48,8 +48,16 @@ const Initial = () => {
           width: "500px",
           height: "590px",
           borderRadius: "6px",
+          padding: "20px",
         }}
-      ></div>
+      >
+        <p style={{ color: "white" }}>
+          Your passion is something you make your own
+        </p>
+        <p style={{ color: "white" }}>
+          Design - Digital Comerce - Web Apps - Mobile - Data Flow
+        </p>
+      </div>
     </div>
   );
 };
