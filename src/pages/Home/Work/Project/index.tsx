@@ -219,14 +219,45 @@ const Project = ({ index, isOpen, onToggle, project, PlayAudio }: Props) => {
             style={{
               width: "100%",
               display: "flex",
-              justifyContent: "end",
-              padding: "10px 30px 0px 0px",
-              gap: "10px",
+              alignItems: "center",
+              justifyContent: "space-between",
             }}
           >
-            <BottomButton isActive={true} />
-            <BottomButton isActive={false} />
-            <BottomButton isActive={false} />
+            <div
+              style={{
+                display: "flex",
+                gap: "10px",
+              }}
+            >
+              {project?.tags?.map((tag, index) => {
+                return (
+                  <div
+                    key={index}
+                    style={{
+                      padding: "10px 15px",
+                      backgroundColor: Colors.WHITE_TRANSPARENT,
+                      color: Colors.WHITE_SMUDGE,
+                      borderRadius: "6px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    {tag}
+                  </div>
+                );
+              })}
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                padding: "10px 30px 0px 0px",
+                gap: "10px",
+              }}
+            >
+              <BottomButton isActive={true} />
+              <BottomButton isActive={false} />
+              <BottomButton isActive={false} />
+            </div>
           </div>
         </AccordionDetails>
       </Accordion>

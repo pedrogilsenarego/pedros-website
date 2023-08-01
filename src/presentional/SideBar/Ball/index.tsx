@@ -54,7 +54,7 @@ const Ball = ({ pos, value }: Props) => {
         />
         <p
           style={{
-            opacity: hover ? 1 : 0,
+            opacity: (scrollToL === value && !hover) || hover ? 1 : 0,
             display: "inline-flex",
             color: scrollToL !== value ? Colors.WHITE_SMUDGE : Colors.WHITE,
             position: "absolute",

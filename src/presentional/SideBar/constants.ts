@@ -1,1 +1,1 @@
-export const list: string[] = ["Home", "Work", "Contact"];
+export const list: string[] = ["Home", "Work", "Skills", "Contact"];
