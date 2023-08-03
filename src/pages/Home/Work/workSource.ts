@@ -49,7 +49,7 @@ export const workSource: WorkSource[] = [
     logo: logoSiteIpc,
     logoHeight: "44px",
     title: "Digital Book Store",
-    url: "www.abolina.com",
+    url: "www.ipc.be",
   },
   {
     logo: logoSiteSmartfreez,
