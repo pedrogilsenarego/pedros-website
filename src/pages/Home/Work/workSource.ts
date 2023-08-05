@@ -9,7 +9,7 @@ import logoSitePunchstories from "../../../assets/images/projects/punchstories/l
 import logoSiteSmartConsulting from "../../../assets/images/projects/smartConsulting/logoSite.webp";
 import logoSiteSmartfreez from "../../../assets/images/projects/smartfreez/logoSite.png";
 
-type WorkTags = "Digital Commerce" | "Web App" | "Mobile App";
+type WorkTags = "Digital Commerce" | "Web App" | "Mobile App" | "Market Place";
 
 export interface WorkSource {
   logo: string;
@@ -32,6 +32,7 @@ export const workSource: WorkSource[] = [
     logoHeight: "25px",
     title: "E-Commerce in Africa",
     url: "www.jumia.com",
+    tags: ["Digital Commerce", "Market Place"],
   },
   {
     logo: logoSiteCGD,
