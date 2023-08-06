@@ -9,7 +9,12 @@ import logoSitePunchstories from "../../../assets/images/projects/punchstories/l
 import logoSiteSmartConsulting from "../../../assets/images/projects/smartConsulting/logoSite.webp";
 import logoSiteSmartfreez from "../../../assets/images/projects/smartfreez/logoSite.png";
 
-type WorkTags = "Digital Commerce" | "Web App" | "Mobile App" | "Market Place";
+type WorkTags =
+  | "Digital Commerce"
+  | "Web App"
+  | "Mobile App"
+  | "Market Place"
+  | "Finance";
 
 export interface WorkSource {
   logo: string;
@@ -39,6 +44,7 @@ export const workSource: WorkSource[] = [
     logoHeight: "35px",
     title: "Digital Book Store",
     url: "www.abolina.com",
+    tags: ["Finance"],
   },
   {
     logo: logoSiteOcto,
