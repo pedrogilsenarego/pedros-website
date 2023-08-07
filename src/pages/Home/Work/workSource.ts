@@ -44,7 +44,7 @@ export const workSource: WorkSource[] = [
     logoHeight: "35px",
     title: "Digital Book Store",
     url: "www.abolina.com",
-    tags: ["Finance"],
+    tags: ["Finance", "Web App"],
   },
   {
     logo: logoSiteOcto,
