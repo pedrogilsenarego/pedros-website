@@ -111,8 +111,8 @@ const Project = ({ index, isOpen, onToggle, project, PlayAudio }: Props) => {
               <img
                 src={project.logo}
                 alt=""
-                height={project.logoHeight || "35px"}
                 style={{
+                  height: project.logoHeight || "35px",
                   opacity: hoverTitle ? 0.7 : 0.2,
                   transition: "all 0.5s ease-in",
                 }}
@@ -198,9 +198,9 @@ const Project = ({ index, isOpen, onToggle, project, PlayAudio }: Props) => {
                 onMouseLeave={() => setHoverMobile(false)}
                 src={imageMobile}
                 alt=""
-                width="200px"
-                height="200px"
                 style={{
+                  height: "200px",
+                  width: "200px",
                   position: "absolute",
                   right: 0,
                   bottom: 25,

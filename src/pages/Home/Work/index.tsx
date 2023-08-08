@@ -1,4 +1,3 @@
-import { useMediaQuery, useTheme } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import audio from "../../../assets/sounds/sound.wav";
@@ -16,8 +15,7 @@ const Work = () => {
 
   const [openAccordionIndex, setOpenAccordionIndex] = useState<number>(-1);
   const PlayAudio = new Audio(audio);
-  const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   const handleAccordionToggle = (index: number) => {
     setOpenAccordionIndex((prevIndex) => (prevIndex === index ? -1 : index));
   };
@@ -25,7 +23,7 @@ const Work = () => {
   const handleScrollToContacts = () => {
     if (null !== worksRef.current) {
       window.scrollTo({
-        top: worksRef.current.offsetTop - (mobile ? 70 : 0),
+        top: worksRef.current.offsetTop - 0,
         behavior: "smooth",
       });
     }

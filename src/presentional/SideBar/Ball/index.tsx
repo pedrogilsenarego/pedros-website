@@ -62,7 +62,7 @@ const Ball = ({ pos, value }: Props) => {
             letterSpacing: "2px",
             //fontFamily: "Teermina",
             textTransform: "uppercase",
-            top: -4,
+
             left: 32,
             transition: hover ? "all 0.6s ease-in-out" : "all 0.3s ease-in-out",
           }}
