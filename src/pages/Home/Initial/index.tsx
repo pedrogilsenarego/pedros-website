@@ -38,25 +38,28 @@ const Initial = () => {
         columnGap: "2vw",
       }}
     >
-      <Screen />
       <div
         style={{
           boxShadow: "2px 2px 10px black",
           border: `solid 2px ${Colors.WHITE_ULTRA_TRANSPARENT}`,
           background: `linear-gradient(15deg, ${Colors.BLACKISH_TRANSPARENT} 0%, ${Colors.WHITE_TRANSPARENT} 100%)`,
           flex: 1,
-          width: "500px",
-          height: "590px",
+
+          display: "flex",
           borderRadius: "6px",
-          padding: "20px",
+          padding: "30px",
+          columnGap: "20px",
         }}
       >
-        <p style={{ color: "white" }}>
-          Your passion is something you make your own
-        </p>
-        <p style={{ color: "white" }}>
-          Design - Digital Comerce - Web Apps - Mobile - Data Flow
-        </p>
+        <Screen />
+        <div>
+          <p style={{ color: "white" }}>
+            Your passion is something you make your own
+          </p>
+          <p style={{ color: "white" }}>
+            Design - Digital Comerce - Web Apps - Mobile - Data Flow
+          </p>
+        </div>
       </div>
     </div>
   );
