@@ -15,7 +15,7 @@ export function DrawerC() {
             <Drawer.Trigger asChild>
               <button
                 type="button"
-                className="rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                className="rounded-full bg-red px-4 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
               >
                 Open Drawer
               </button>
@@ -35,26 +35,6 @@ export function DrawerC() {
                     </p>
                     <p className="text-gray-600 mb-2">
                       It comes unstyled and has gesture-driven animations.
-                    </p>
-                    <p className="text-gray-600 mb-8">
-                      It uses{" "}
-                      <a
-                        href="https://www.radix-ui.com/docs/primitives/components/dialog"
-                        className="underline"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Radix's Dialog primitive
-                      </a>{" "}
-                      under the hood and is inspired by{" "}
-                      <a
-                        href="https://twitter.com/devongovett/status/1674470185783402496"
-                        className="underline"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        this tweet.
-                      </a>
                     </p>
                   </div>
                 </div>
