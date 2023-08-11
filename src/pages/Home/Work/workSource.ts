@@ -51,7 +51,7 @@ export const workSource: WorkSource[] = [
     logoHeight: "40px",
     title: "Designer Digital Store",
     url: "www.octo-mistic.com",
-    tags: ["Digital Commerce"],
+    tags: ["Digital Commerce", "Web App"],
   },
   {
     logo: logoSiteIpc,
