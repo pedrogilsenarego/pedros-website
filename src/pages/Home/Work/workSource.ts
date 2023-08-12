@@ -14,7 +14,8 @@ type WorkTags =
   | "Web App"
   | "Mobile App"
   | "Market Place"
-  | "Finance";
+  | "Finance"
+  | "Technology";
 
 export interface WorkSource {
   logo: string;
@@ -64,6 +65,7 @@ export const workSource: WorkSource[] = [
     logoHeight: "40px",
     title: "Digital Book Store",
     url: "www.abolina.com",
+    tags: ["Technology"],
   },
   {
     logo: logoSiteSmartConsulting,
