@@ -59,6 +59,7 @@ export const workSource: WorkSource[] = [
     logoHeight: "44px",
     title: "Digital Book Store",
     url: "www.ipc.be",
+    tags: ["Web App"],
   },
   {
     logo: logoSiteSmartfreez,
