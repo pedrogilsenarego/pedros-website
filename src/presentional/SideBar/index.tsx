@@ -1,5 +1,5 @@
 import { useMediaQuery, useTheme } from "@mui/material";
-
+import { DrawerC } from "../../components/Drawer";
 import Ball from "./Ball";
 import { list } from "./constants";
 
@@ -27,6 +27,7 @@ const SideBar = () => {
           {list.map((item, pos) => {
             return <Ball key={pos} pos={pos} value={item} />;
           })}
+          <DrawerC />
         </div>
       </>
     );

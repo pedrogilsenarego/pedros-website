@@ -22,7 +22,6 @@ const Home = () => {
       }}
     >
       <SideBar />
-      <DrawerC />
       <Initial />
       <Work />
       <Skills />
