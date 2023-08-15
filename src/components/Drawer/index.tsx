@@ -3,7 +3,7 @@ import { Drawer } from "vaul";
 export function DrawerC() {
   return (
     <div className="relative">
-      <Drawer.Root>
+      <Drawer.Root shouldScaleBackground>
         <Drawer.Trigger asChild>
           <button
             type="button"

@@ -90,6 +90,6 @@ export const workSource: WorkSource[] = [
     logo: logoSitePunchstories,
     logoHeight: "40px",
     title: "Digital Book Store",
-    url: "www.abolina.com",
+    url: "www.punchstories.com",
   },
 ];
