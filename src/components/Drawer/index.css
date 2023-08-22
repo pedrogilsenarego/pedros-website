@@ -1,0 +1,10 @@
+/* index.css */
+.menu-icon {
+  transform: rotate(0deg); /* Apply the rotation directly on hover */
+  transition: transform 6s linear; /* Add a transition for the transform property */
+}
+
+.menu-icon:hover {
+  transform: rotate(360deg); /* Apply the rotation directly on hover */
+  transition-duration: 6s; /* Set the transition duration on hover */
+}

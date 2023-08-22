@@ -1,13 +1,23 @@
+import { FaReact } from "react-icons/fa";
 import { Drawer } from "vaul";
+import { Colors } from "../../constants/pallete";
+import "./index.css";
 
 export function DrawerC() {
   return (
     <div className="relative">
       <Drawer.Root shouldScaleBackground>
         <Drawer.Trigger asChild>
-          <button
-            type="button"
-            className="w-2 h-2 bg-slate-50 font-semibold text-gray-900   hover:bg-gray-50"
+          <FaReact
+            size={"50px"}
+            color={Colors.WHITE_SMUDGE}
+            className={"menu-icon"}
+            style={{
+              position: "fixed",
+              right: "70px",
+              top: "calc(50% - 17.5px)", // Center vertically
+              cursor: "pointer",
+            }}
           />
         </Drawer.Trigger>
         <Drawer.Overlay className="fixed inset-0 bg-black/40" />

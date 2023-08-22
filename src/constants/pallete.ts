@@ -7,6 +7,7 @@ export const Colors = {
   BLACKISH_TRANSPARENT: "#08070a66",
   WHITE: "#ffffff",
   WHITE_SMUDGE: "#ffffffAE",
+  WHITE_LIGHT_TRANSPARENT: "#ffffff33",
   WHITE_TRANSPARENT: "#ffffff0D",
   WHITE_ULTRA_TRANSPARENT: "#ffffff05",
   BLUE_TRANSPARENT: "rgba(0,212,255,0.2)",
