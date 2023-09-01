@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { DrawerC } from "../../components/Drawer";
 import { Colors } from "../../constants/pallete";
 import SideBar from "../../presentional/SideBar";
 import { scrollTo } from "../../slicer/general/general.actions";

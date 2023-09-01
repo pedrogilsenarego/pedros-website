@@ -1,6 +1,4 @@
 import { createContext, useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { ROUTE_PATHS } from "../constants/routes";
 
 interface Props {
   children: React.ReactNode;
@@ -10,18 +8,20 @@ interface MusicContextType {
   isPlaying: boolean;
   setIsPlaying: (isPlaying: boolean) => void;
   switchAudio: () => void;
+  togglePause: () => void;
 }
 
 export const MusicContext = createContext<MusicContextType>({
   isPlaying: false,
   setIsPlaying: () => {},
   switchAudio: () => {},
+  togglePause: () => {},
 });
 
 const MusicProvider = ({ children }: Props) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioIndex, setAudioIndex] = useState(0);
-  const location = useLocation();
+
   const audios = [
     "https://res.cloudinary.com/daantetcr/video/upload/v1680862176/personalWebsite/Air_-_Alone_in_Kyoto__ColdMP3.com_h7eva5.mp3",
     "https://res.cloudinary.com/daantetcr/video/upload/v1690918676/personalWebsite/Rhye_-_The_Fall_320_kbps_kmcwk6.mp3",
@@ -64,39 +64,11 @@ const MusicProvider = ({ children }: Props) => {
     isPlaying,
     setIsPlaying,
     switchAudio,
+    togglePause,
   };
 
   return (
     <MusicContext.Provider value={contextValue}>
-      {location.pathname !== ROUTE_PATHS.LANDING_PAGE && (
-        <>
-          <div
-            onClick={() => togglePause()}
-            style={{
-              height: "100px",
-              width: "100px",
-              backgroundColor: "white",
-              position: "absolute",
-              top: 10,
-              right: 10,
-              zIndex: 1000,
-            }}
-          ></div>
-          <div
-            onClick={() => switchAudio()}
-            style={{
-              height: "100px",
-              width: "100px",
-              backgroundColor: "red",
-              position: "absolute",
-              top: 200,
-              right: 10,
-              zIndex: 1000,
-            }}
-          ></div>
-        </>
-      )}
-
       {musicUrl && (
         <audio
           ref={audioRef}
