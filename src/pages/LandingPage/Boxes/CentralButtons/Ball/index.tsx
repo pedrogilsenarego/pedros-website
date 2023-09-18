@@ -2,26 +2,20 @@ import { Box } from "@mui/material";
 import { useState } from "react";
 import { Colors } from "../../../../../constants/pallete";
 
-
-
 interface Props {
-  onClick: any
-
+  onClick: any;
 }
 
 const Ball = ({ onClick }: Props) => {
   const [hover, setHover] = useState(false);
 
-
   return (
     <div
-      style={{ cursor: "pointer" }}
       onClick={onClick}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
       <div
-
         style={{
           position: "relative",
           width: "25px",

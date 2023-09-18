@@ -31,7 +31,7 @@ const Initial = () => {
       style={{
         padding: "10vh 10vw",
         display: "flex",
-        justifyContent: "space-between",
+
         alignItems: "center",
         minHeight: "100vh",
         width: "100vw",
@@ -43,7 +43,6 @@ const Initial = () => {
           boxShadow: "2px 2px 10px black",
           border: `solid 2px ${Colors.WHITE_ULTRA_TRANSPARENT}`,
           background: `linear-gradient(15deg, ${Colors.BLACKISH_TRANSPARENT} 0%, ${Colors.WHITE_TRANSPARENT} 100%)`,
-          flex: 1,
 
           display: "flex",
           borderRadius: "6px",
@@ -52,14 +51,20 @@ const Initial = () => {
         }}
       >
         <Screen />
-        <div>
-          <p style={{ color: "white" }}>
-            Your passion is something you make your own
-          </p>
-          <p style={{ color: "white" }}>
-            Design - Digital Comerce - Web Apps - Mobile - Data Flow
-          </p>
-        </div>
+      </div>
+      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+        <p
+          style={{
+            color: "white",
+            maxWidth: "60%",
+            textAlign: "center",
+            fontFamily: "Termina",
+            fontSize: "45px",
+          }}
+        >
+          Your passion is something you make your own, finding the best
+          solutions to the everyday problems
+        </p>
       </div>
     </div>
   );

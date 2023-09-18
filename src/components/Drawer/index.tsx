@@ -20,7 +20,6 @@ export function DrawerC() {
               position: "fixed",
               right: "65px",
               top: "calc(50% - 17.5px)", // Center vertically
-              cursor: "pointer",
             }}
           />
         </Drawer.Trigger>

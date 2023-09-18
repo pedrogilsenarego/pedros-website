@@ -15,7 +15,6 @@ const BottomButton = ({ isActive }: Props) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        cursor: "pointer",
       }}
     >
       <div

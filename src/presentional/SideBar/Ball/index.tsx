@@ -21,7 +21,7 @@ const Ball = ({ pos, value }: Props) => {
 
   return (
     <div
-      style={{ cursor: "pointer", position: "relative" }}
+      style={{ position: "relative" }}
       onClick={() => handleClick()}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}

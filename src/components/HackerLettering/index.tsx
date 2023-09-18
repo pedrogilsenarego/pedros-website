@@ -105,7 +105,7 @@ const HackerLettering = ({
           }}
         >
           <div
-            style={{ cursor: "pointer", display: "flex", position: "relative" }}
+            style={{ display: "flex", position: "relative" }}
             onMouseEnter={(e) => {
               setStopEffect(true);
             }}
@@ -152,7 +152,7 @@ const HackerLettering = ({
               opacity: showName ? 1 : 0,
               transition: "opacity 3s ease-in-out",
               color: color,
-              cursor: "pointer",
+
               fontFamily: "Termina",
             }}
           >

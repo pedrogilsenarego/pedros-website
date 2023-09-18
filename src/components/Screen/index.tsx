@@ -9,7 +9,7 @@ const Screen = () => {
           style={{
             top: "2px",
             left: "2px",
-            cursor: "pointer",
+
             //transform: "perspective(800px) rotateX(25deg)",
           }}
         >
