@@ -11,6 +11,11 @@ const Manager = () => {
     <div
       style={{
         position: "absolute",
+        borderTop: "solid 2px #ffffff05",
+        borderBottom: "solid 2px #ffffff05",
+        borderLeft: "solid 2px #ffffff05",
+        borderBottomLeftRadius: "20px",
+        borderTopLeftRadius: "20px",
         backgroundColor,
         right: openModal ? 0 : -500,
         transition: "all ease-in-out 0.5s",
@@ -25,14 +30,17 @@ const Manager = () => {
       <div
         onClick={() => setOpenModal(!openModal)}
         style={{
+          borderTop: "solid 2px #ffffff05",
+          borderBottom: "solid 2px #ffffff05",
+          borderLeft: "solid 2px #ffffff05",
           position: "absolute",
           left: `-${labelSize}px`,
           top: `calc(250px - ${labelSize / 2}px)`,
           height: `${labelSize}px`,
           width: `${labelSize}px`,
           backgroundColor,
-          borderTopLeftRadius: `${labelSize / 2}px`,
-          borderBottomLeftRadius: `${labelSize / 2}px`,
+          borderTopLeftRadius: "10px",
+          borderBottomLeftRadius: "10px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -54,7 +62,7 @@ const Manager = () => {
             columnGap: "10px",
             border: "solid 2px #ffffff66",
             position: "relative",
-            boxShadow: "2px 2px 2px 2px #00000066 inset",
+            //boxShadow: "0px 0px 3px 1px #000000 inset",
           }}
         >
           <div
@@ -97,7 +105,7 @@ const Manager = () => {
               aspectRatio: 1,
             }}
           ></div>
-          <div
+          {/* <div
             style={{
               position: "absolute",
               backgroundColor: "#00000066",
@@ -109,7 +117,7 @@ const Manager = () => {
               height: "50px",
               width: "2px",
             }}
-          ></div>
+          ></div> */}
         </div>
       </div>
     </div>
