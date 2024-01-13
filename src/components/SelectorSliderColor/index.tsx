@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Colors } from "../../constants/pallete";
 
-const SelectorSliderColor = () => {
+type Props = { label: string };
+
+const SelectorSliderColor = ({ label }: Props) => {
   const [mode, setMode] = useState<"dark" | "light" | "hipster">("dark");
   return (
     <div
@@ -12,7 +14,7 @@ const SelectorSliderColor = () => {
         marginTop: "20px",
       }}
     >
-      <p style={{ color: "#ffffff66" }}>Cursor</p>
+      <p style={{ color: "#ffffff66" }}>{label}</p>
       <div
         style={{
           borderRadius: "14px",

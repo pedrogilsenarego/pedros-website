@@ -55,7 +55,8 @@ const Manager = () => {
         />
       </div>
       <SelectorSlider />
-      <SelectorSliderColor />
+      <SelectorSliderColor label="Contrast:" />
+      <SelectorSliderColor label="Cursor:" />
     </div>
   );
 };
