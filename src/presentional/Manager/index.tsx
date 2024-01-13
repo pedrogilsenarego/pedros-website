@@ -6,7 +6,6 @@ import { Colors } from "../../constants/pallete";
 
 const Manager = () => {
   const [openModal, setOpenModal] = useState<boolean>(true);
-  const [mode, setMode] = useState<"dark" | "light" | "hipster">("dark");
   const backgroundColor = "#6495ED05";
   const labelSize = 80;
 
@@ -55,8 +54,18 @@ const Manager = () => {
         />
       </div>
       <SelectorSlider />
-      <SelectorSliderColor label="Contrast:" />
-      <SelectorSliderColor label="Cursor:" />
+      <SelectorSliderColor
+        label="Contrast:"
+        options={[
+          { color: "lightGrey" },
+          { color: Colors.TEALC },
+          { color: Colors.BLACKISH },
+        ]}
+      />
+      <SelectorSliderColor
+        label="Cursor:"
+        options={[{ color: Colors.TEALC }]}
+      />
     </div>
   );
 };
