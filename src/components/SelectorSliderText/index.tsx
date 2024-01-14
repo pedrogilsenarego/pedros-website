@@ -49,7 +49,7 @@ const SelectorSliderText = () => {
       transform: "translateY(-50%)",
       left: leftPosition,
       transition: "all ease-in-out 0.5s",
-      borderRadius: "12px",
+      borderRadius: "10px",
       height: "40px",
       width: (currentRef.current?.clientWidth ?? 60) + padding,
     } as React.CSSProperties;
@@ -69,7 +69,7 @@ const SelectorSliderText = () => {
         style={{
           borderRadius: "14px",
           backgroundColor: "#ffffff",
-          padding: "14px 12px",
+          padding: "14px 13px",
           display: "flex",
           justifyContent: "space-between",
           columnGap: "30px",

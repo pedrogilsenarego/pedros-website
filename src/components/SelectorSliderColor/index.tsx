@@ -4,14 +4,15 @@ import useColorGenerator from "../../hooks/useColorGenerator";
 
 type Props = {
   label: string;
+  initialState: number;
   options: {
     color: string;
     action?: () => void;
   }[];
 };
 
-const SelectorSliderColor = ({ label, options }: Props) => {
-  const [mode, setMode] = useState<number>(0);
+const SelectorSliderColor = ({ label, options, initialState }: Props) => {
+  const [mode, setMode] = useState<number>(initialState || 0);
   const { contrastColor } = useColorGenerator();
   return (
     <div
