@@ -1,4 +1,4 @@
-import generalTypes from "./general.types";
+import generalTypes, { Contrast } from "./general.types";
 
 export const updateLang = (lang: string) => ({
   type: generalTypes.UPDATE_LANG,
@@ -18,4 +18,9 @@ export const setCookiePolicy = (signal: boolean) => ({
 export const setPositionVertical = (position: boolean) => ({
   type: generalTypes.POSITION_VERTICAL,
   payload: position,
+});
+
+export const setContrast = (color: Contrast) => ({
+  type: generalTypes.SET_CONTRAST,
+  payload: color,
 });

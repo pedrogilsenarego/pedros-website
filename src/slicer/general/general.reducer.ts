@@ -4,7 +4,7 @@ const INITIAL_STATE: GeneralState = {
   lang: "EN",
   scrollTo: "Home",
   cookiePolicy: true,
-
+  contrast: "grey",
   positionVertical: false,
 };
 
@@ -35,6 +35,11 @@ const generalReducer = (state = INITIAL_STATE, action: Action) => {
       return {
         ...state,
         positionVertical: action.payload,
+      };
+    case generalTypes.SET_CONTRAST:
+      return {
+        ...state,
+        contrast: action.payload,
       };
 
     default:

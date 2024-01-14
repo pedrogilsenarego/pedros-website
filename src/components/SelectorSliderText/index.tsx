@@ -1,10 +1,11 @@
 import { Typography } from "@mui/material";
 import { useLayoutEffect, useRef, useState } from "react";
 import { Colors } from "../../constants/pallete";
+import useColorGenerator from "../../hooks/useColorGenerator";
 
 const SelectorSliderText = () => {
   const [mode, setMode] = useState<"dark" | "light" | "hipster">("dark");
-
+  const { contrastColor } = useColorGenerator();
   const handleModeChange = (newMode: "dark" | "light" | "hipster") => {
     setMode(newMode);
   };
@@ -55,7 +56,15 @@ const SelectorSliderText = () => {
   };
   return (
     <div style={{ display: "flex", alignItems: "center", columnGap: "30px" }}>
-      <p style={{ color: "#ffffff66" }}>Mode:</p>
+      <p
+        style={{
+          color: contrastColor.text,
+          transition: "all ease-in-out 1.5s",
+          width: "100px",
+        }}
+      >
+        Mode:
+      </p>
       <div
         style={{
           borderRadius: "14px",

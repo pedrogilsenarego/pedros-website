@@ -7,10 +7,13 @@ export const Colors = {
   BLACKISH_TRANSPARENT: "#08070a66",
   WHITE: "#ffffff",
   WHITE_SMUDGE: "#ffffffAE",
+  WHITE_TRANSPARENT_MID: "#ffffff66",
   WHITE_LIGHT_TRANSPARENT: "#ffffff33",
   WHITE_TRANSPARENT: "#ffffff0D",
   WHITE_ULTRA_TRANSPARENT: "#ffffff05",
   BLUE_TRANSPARENT: "rgba(0,212,255,0.2)",
   BLUE_TRANSPARENT_MID: "rgba(0,212,255,0.5)",
+  DARK_BLUE_TRANSPARENT: "#6495ED05",
   TEALC: "#009ca6",
+  FUCHSIA: "#ca2c92",
 };

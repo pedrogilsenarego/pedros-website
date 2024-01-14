@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { Colors } from "../../constants/pallete";
+import useColorGenerator from "../../hooks/useColorGenerator";
 
 type Props = {
   label: string;
   options: {
     color: string;
+    action?: () => void;
   }[];
 };
 
 const SelectorSliderColor = ({ label, options }: Props) => {
   const [mode, setMode] = useState<number>(0);
+  const { contrastColor } = useColorGenerator();
   return (
     <div
       style={{
@@ -19,7 +22,15 @@ const SelectorSliderColor = ({ label, options }: Props) => {
         marginTop: "20px",
       }}
     >
-      <p style={{ color: "#ffffff66" }}>{label}</p>
+      <p
+        style={{
+          color: contrastColor.text,
+          transition: "all ease-in-out 1.5s",
+          width: "100px",
+        }}
+      >
+        {label}
+      </p>
       <div
         style={{
           borderRadius: "14px",
@@ -36,7 +47,12 @@ const SelectorSliderColor = ({ label, options }: Props) => {
           return (
             <div
               key={index}
-              onClick={() => setMode(index)}
+              onClick={() => {
+                setMode(index);
+                if (item.action) {
+                  item.action();
+                }
+              }}
               style={{
                 width: "30px",
                 height: "30px",

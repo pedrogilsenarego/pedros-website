@@ -1,6 +1,7 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 
+import useColorGenerator from "../../hooks/useColorGenerator";
 import { LandingPageContext } from "../../pages/LandingPage/LandingPageContext";
 
 interface Props {
@@ -30,7 +31,8 @@ const HackerLettering = ({
   const [goHome, setGoHome] = useState<boolean>(false);
   const [mobileFirstTouch, setMobileFirstTouch] = useState<boolean>(false);
   const [hide, setHide] = useState<boolean>(false);
-  const { setBoxesOpacity } = useContext(LandingPageContext);
+
+  const { contrastColor } = useColorGenerator();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -59,42 +61,13 @@ const HackerLettering = ({
     }
   }, [stopEffect]);
 
-  /* const handleGoBox = (e: any) => {
-    e.preventDefault();
-    setMobileFirstTouch(true);
-
-    setTimeout(() => {
-      setGoHome(true);
-      startAudio();
-      setTimeout(() => {
-        setBoxesOpacity(true);
-        setHide(true);
-      }, 1700);
-    }, 500);
-  };
-
-  const handleMobile = (e: any) => {
-    e.preventDefault();
-    if (!mobileFirstTouch) {
-      setMobileFirstTouch(true);
-      startAudio();
-    } else
-      setTimeout(() => {
-        setGoHome(true);
-        setTimeout(() => {
-          setBoxesOpacity(true);
-          setHide(true);
-        }, 1700);
-      }, 500);
-  };*/
-
   return (
     <>
       {!hide && (
         <div
-          //onClick={(e) => (mobile ? handleMobile(e) : handleGoBox(e))}
           style={{
             zIndex: 1000,
+
             rowGap: mobile ? "15px" : "20px",
             justifyContent: "center",
             flexDirection: "column",
@@ -105,7 +78,7 @@ const HackerLettering = ({
           }}
         >
           <div
-            style={{ display: "flex", position: "relative" }}
+            style={{ display: "flex", position: "relative", columnGap: "10px" }}
             onMouseEnter={(e) => {
               setStopEffect(true);
             }}
@@ -116,8 +89,14 @@ const HackerLettering = ({
                 <div
                   key={pos}
                   style={{
-                    border: `solid 1px ${borderColor || "#ffffff36"}`,
-
+                    transition: "all ease-in-out 1.5s",
+                    borderRadius: "6px",
+                    border:
+                      item === " "
+                        ? "transparent"
+                        : `solid 1px ${borderColor || "#ffffff36"}`,
+                    backgroundColor:
+                      item === " " ? "transparent" : contrastColor.main,
                     width: mobile ? "1.1rem" : "2.3rem",
                     height: mobile ? "1.2rem" : "3rem",
                     display: "flex",
@@ -129,8 +108,9 @@ const HackerLettering = ({
                     "\u00A0"
                   ) : (
                     <Typography
-                      color={color || "white"}
+                      color={color || contrastColor.text}
                       style={{
+                        transition: "all ease-in-out 1.5s",
                         fontFamily: "Source Code Pro",
                         opacity: pos <= counter ? 1 : 0.6,
                         textTransform: "uppercase",
