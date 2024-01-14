@@ -1,7 +1,9 @@
 import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
+import useColorGenerator from "../../../hooks/useColorGenerator";
 
 const GeneralCursor = () => {
+  const { contrastColor } = useColorGenerator();
   const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
@@ -61,7 +63,7 @@ const GeneralCursor = () => {
         width: "15px",
         borderRadius: "50px",
         transition: "background-color 0.1s ease-in-out",
-        backgroundColor: "#ff3232CC",
+        backgroundColor: contrastColor.cursor,
         transform: `translate3d(${mousePosition.x}px, ${
           mousePosition.y + mouseScroll
         }px, 0)`,

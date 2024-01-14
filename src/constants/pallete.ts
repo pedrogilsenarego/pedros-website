@@ -15,5 +15,7 @@ export const Colors = {
   BLUE_TRANSPARENT_MID: "rgba(0,212,255,0.5)",
   DARK_BLUE_TRANSPARENT: "#6495ED05",
   TEALC: "#009ca6",
+  DARK_TEALC: "#003d41",
   FUCHSIA: "#ca2c92",
+  DARK_FUCHSIA: "#7f1b5c",
 };

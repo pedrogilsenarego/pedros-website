@@ -57,13 +57,13 @@ const Manager = () => {
       <div
         ref={modalRef}
         style={{
-          position: "absolute",
-          border: "solid 2px #ffffff05",
+          position: "fixed",
+          border: `solid 2px ${contrastColor.border}`,
           borderRadius: "20px",
           backgroundColor,
           right: openModal ? 20 : -500,
           transition:
-            "background-color 1.5s ease-in-out, right 0.4s ease-in-out",
+            "background-color 1.5s ease-in-out, border-color 1.5s ease-in-out, right 0.4s ease-in-out",
           top: "50%",
           transform: "translateY(-50%)",
 
@@ -106,13 +106,13 @@ const Manager = () => {
       <div
         ref={modal2Ref}
         style={{
-          position: "absolute",
-          border: "solid 2px #ffffff05",
+          position: "fixed",
+          border: `solid 2px ${contrastColor.border}`,
           borderRadius: "20px",
           backgroundColor,
           right: openModal ? 20 : -500,
           transition:
-            "background-color 1.5s ease-in-out, right 0.4s ease-in-out",
+            "background-color 1.5s ease-in-out, border-color 1.5s ease-in-out, right 0.4s ease-in-out",
           top: `calc(50% + ${
             (modalRef.current?.offsetHeight || 0) / 2 + 60
           }px)`,
