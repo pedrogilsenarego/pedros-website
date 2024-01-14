@@ -14,6 +14,7 @@ const Manager = () => {
   const { contrastColor } = useColorGenerator();
   const backgroundColor = contrastColor.main;
   const modalRef = useRef<HTMLDivElement>(null);
+  const modal2Ref = useRef<HTMLDivElement>(null);
   const burgerMenuRef = useRef<HTMLDivElement>(null); // Add a ref for the burger menu
 
   const constrast = useSelector<State, Contrast>(
@@ -101,6 +102,29 @@ const Manager = () => {
           label="Cursor:"
           options={[{ color: Colors.TEALC }]}
         />
+      </div>
+      <div
+        ref={modal2Ref}
+        style={{
+          position: "absolute",
+          border: "solid 2px #ffffff05",
+          borderRadius: "20px",
+          backgroundColor,
+          right: openModal ? 20 : -500,
+          transition:
+            "background-color 1.5s ease-in-out, right 0.4s ease-in-out",
+          top: `calc(50% + ${
+            (modalRef.current?.offsetHeight || 0) / 2 + 60
+          }px)`,
+
+          transform: "translateY(-50%)",
+
+          zIndex: 1000,
+
+          padding: "20px",
+        }}
+      >
+        <SelectorSlider />
       </div>
       <div
         ref={burgerMenuRef}
